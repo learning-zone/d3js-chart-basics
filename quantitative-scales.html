@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>D3 Quantitative Scale</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.15/d3.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>D3 Quantitative Scale</h1>
+        <div id="chart"></div>
+    </div>
+</body>
+<script type="text/javascript">
+    var bardata = [100, 45, 25, 15, 10, 7];
+
+        var height = 400,
+            width = 600,
+            barWidth = 50,
+            barOffset = 5;
+
+        var yScale = d3.scale.linear()
+            .domain([0, d3.max(bardata)])
+            .range([0, height])
+
+        d3.select('#chart').append('svg')
+            .attr('width', width)
+            .attr('height', height)
+            .style('background', '#C9D7D6')
+            .selectAll('rect').data(bardata)
+            .enter().append('rect')
+            .style('fill', '#1e90ff')
+            .attr('width', barWidth)
+            .attr('height', function (d) {
+                return yScale(d);
+            })
+            .attr('x', function (d, i) {
+                return i * (barWidth + barOffset);
+            })
+            .attr('y', function (d) {
+                return height - yScale(d);
+            })
+</script>
+</html>

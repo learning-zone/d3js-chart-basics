@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>D3 Tooltip Example</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.15/d3.min.js"></script>
+</head>
+<body>
+    <h1>D3 Tooltip Example</h1>
+    <div class="circle_div"></div>
+</body>
+
+<script type="text/javascript">
+    var tooltip = d3.select("body")
+        .append("div")
+        .style("position", "absolute")
+        .style("visibility", "hidden")
+        .text("D3 Tooltip Example");
+
+    var sampleSVG = d3.select(".circle_div")
+        .append("svg:svg")
+        .attr("class", "sample")
+        .attr("width", "300px")
+        .attr("height", "300px"); 
+
+    d3.select(".circle_div svg")
+        .append("svg:circle")
+        .attr("stroke", "black")
+        .attr("fill", "#1e90ff")
+        .attr("r", 50)
+        .attr("cx", 52)
+        .attr("cy", 52)
+        .on("mouseover", function () { 
+            return tooltip.style("visibility", "visible"); 
+        })
+        .on("mousemove", function () { 
+            return tooltip.style("top", (d3.event.pageY - 10) + "px").style("left", (d3.event.pageX + 10) + "px"); 
+        })
+        .on("mouseout", function () { 
+            return tooltip.style("visibility", "hidden");
+        });
+
+</script>
+</html>

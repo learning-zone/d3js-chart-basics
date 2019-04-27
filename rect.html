@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>D3 Bar Chart Example</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.15/d3.min.js"></script>
+</head>
+<body>
+    <h1>D3 Bar Chart Example</h1>
+</body>
+<script type="text/javascript">
+    var dataArray = [20, 15, 5];
+
+    var svg = d3.select("body").append("svg").attr("height", "300px").attr("width", "600px").style('background', '#C9D7D6');
+
+    svg.selectAll("rect")
+        .data(dataArray)
+        .enter().append("rect")
+        .attr("height", function (d, i) { return d * 15; })
+        .attr("width", "50")
+        .attr("fill", "#1e90ff")
+        .attr("x", function (d, i) { return 60 * i; })
+        .attr("y", function (d, i) { return 300 - (d * 15); });
+</script>
+</html>

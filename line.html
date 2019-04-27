@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>D3 Line Chart Example</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.15/d3.min.js"></script>
+    <style>
+        line {
+            stroke: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>D3 Line Chart</h1>
+</body>
+<script type="text/javascript">
+    var dataArray = [25];
+
+    var svg = d3.select("body").append("svg").attr("height", "100px").attr("width", "500px").style('background', '#C9D7D6');
+
+    var newX = 400;
+        svg.selectAll("line")
+            .data(dataArray)
+            .enter().append("line")
+            .attr("stroke-width", "2")
+            .attr("x1", 10)
+            .attr("y1", 50)
+            .attr("x2", 490)
+            .attr("y2", 50);
+</script>
+
+</html>

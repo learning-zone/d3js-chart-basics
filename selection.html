@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>D3 Chart</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.15/d3.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>D3 Chart Example</h2>
+        <section id="chart">
+            <div class="item">Barot Bellingham</div>
+            <div class="item">Hassum Harrod</div>
+            <div class="item">Jennifer Jerome</div>
+            <div class="item">Richard Tweet</div>
+            <div class="item">Lorenzo Garcia</div>
+            <div class="item">Xhou Ta</div>
+        </section>
+    </div>
+    <script type="text/javascript">
+        /***
+         * D3 Function List
+         * 
+         * select(), selectAll(), append(), remove(), attr(), classed(), style(), data(), enter()
+         * 
+         ***/
+
+        d3.selectAll('.item:nth-child(2n)')
+          .text('select');
+
+    
+    </script>
+</body>
+</html>

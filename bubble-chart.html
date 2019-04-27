@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>D3 Bubble Chart Example</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.15/d3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+</head>
+<style>
+  .chart-active {
+    stroke: #000;
+    stroke-width: 2px;
+  }
+  .chart-nodelink {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1.5px;
+  }
+  .chart-templink {
+    fill: none;
+    stroke: red;
+    stroke-width: 1.5px;
+  }
+  /** popover style **/
+  .chart-popover-container {
+      position: absolute;
+      z-index:10;
+      visibility: hidden;
+      color: #333;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 6px;
+      font: 12px Helvetica Neue,Helvetica,Arial,sans-serif;
+      line-height: 1.428571429;
+      border: 1px solid rgba(0,0,0,0.2);
+      box-shadow: 0 3px 9px rgba(0,0,0,0.5);
+      background-clip: padding-box;   
+  }
+  .chart-popover-input {
+      border: none;
+      padding-top: 10px;
+      font-weight: 600;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+  .chart-arrow {
+      width: 0;
+      height: 0;
+      border-bottom: 8px solid transparent;
+      border-top: 8px solid transparent;
+      border-right: 8px solid rgba(255,255,255,1);
+      font-size: 0;
+      line-height: 0px;
+      top: 25%;
+      left: -8px;
+      position: absolute;
+  }
+  br {
+      content: "";
+      margin: 2px;
+      display: block;
+      font-size: 25%;
+  }
+ 
+</style>
+<body>
+    <h2>D3 Drag and Drop Example</h2>
+    <svg width="960" height="500"></svg>
+</body>
+<script type="text/javascript">
+
+var selectedNode = null;
+var selectedNodeId = null;
+var draggingNode = null;
+var draggingNodeId = null;
+var max = 100;
+var min = 1;
+var width = 800;
+var height = 400;
+var radius = 20;
+var gap = 100;
+var link_namespace = {};
+var links = [];
+
+var svg = d3.select("svg"),
+    width = +svg.attr("width"),
+    height = +svg.attr("height"),
+    radius = 20;
+
+var tooltip = d3.select("body")
+    .append("div")
+    .attr("class", "chart-popover-container")
+    .html("tooltip");
+
+var charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var circles = d3.range(5).map(function() {
+  
+  return {
+    x: Math.round(Math.random() * (width - radius * 2) + radius),
+    y: Math.round(Math.random() * (height - radius * 2) + radius),
+    title: charset.charAt(Math.floor(Math.random() * 26)),
+    value: Math.round(Math.random() * (100)),
+    r: Math.floor(Math.random()*(30-10+1)+10)
+  };
+  
+});
+
+var nodes = d3.range(5).map(function() {
+  return {
+    x: Math.floor(Math.random() * (max - min)) + min,
+    y: Math.floor(Math.random() * (max - min)) + min
+  };
+});
+
+var color = function() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+//custom function
+var overCircle = function(d,i) {
+  console.log("overCircle");
+  selectedNode = d;
+  selectedNodeId = i;
+  redraw();
+}
+var outCircle = function(d) {
+  console.log("outCircle");
+  selectedNode = null;
+  //selectedNodeId = null;
+  redraw();
+}
+
+var circleDragger = d3.behavior.drag()
+      .on("dragstart", function(d,i){
+          draggingNode = d;
+          draggingNodeId = i;
+          // it's important that we suppress the mouseover event on the node being dragged. Otherwise it will absorb the mouseover event and the underlying node will not detect it
+          d3.selectAll('.inactive').attr('opacity', '.35');
+          d3.select(this).attr( 'pointer-events', 'none').attr('class', 'chart-active').attr('opacity', '1');
+          
+          //console.log(".chart-nodelink node"+i);
+      })
+      .on("drag", function(d){
+          d.x += d3.event.dx;
+          d.y += d3.event.dy;
+          var node = d3.select(this);
+          node.attr( { cx: d.x, cy: d.y } );
+          redraw();
+      })
+      .on("dragend", function(d){
+          draggingNode = null;
+          //draggingNodeId = null;
+          merge();
+          // now restore the mouseover event or we won't be able to drag a 2nd time
+          d3.select(this).attr( 'pointer-events', '' ).attr('class', 'inactive');
+          d3.selectAll('.inactive').attr('opacity', '1');
+      });
+
+  //function to generate bubble-chart
+  svg.selectAll("circle")
+    .data(nodes)
+        .enter()
+        .append("g")
+    .data(circles)
+    .append("circle")
+      .attr("cx", function(d) { return d.x; })
+      .attr("cy", function(d) { return d.y; })
+      .attr("r",  function(d) { return d.r; })
+      .attr("class", "inactive")
+      .attr("id", function(d, i) { return  "circle"+i; })
+      .style("fill", function(d, i) { return color(i); })
+      .on("mouseover", function(d, i) {
+              var tooltip_text = "";
+              var arr = [];
+                  arr = d3.select(this).attr('merge_array');
+              
+                var sort_unique = function (arr) {
+                    return arr.filter(function(el,i,a) {
+                        return (i==a.indexOf(el));
+                    });
+                }
+                var tooltip_input = last_circle = "";
+                if(arr) {
+                    
+                    arr = sort_unique(JSON.parse( "[" +arr+"]"));
+                    console.log(arr);
+                                       
+                    for(var index=0; index < arr.length; index++) {
+                            tooltip_text += circles[arr[index]].title + " circle: "+circles[arr[index]].value + " records <i class='fa fa-times' aria-hidden='true' value='"+circles[arr[index]].value+"'></i><br/>"; 
+                            last_circle = circles[arr[index]].title + " circle";
+                    }
+                    
+                    tooltip_input = "<input type='text' name='' value='"+last_circle+"' class='chart-popover-input'><i class='fa fa-pencil' aria-hidden='true'></i><hr/>";
+                } else {
+                            tooltip_text = d.title + " circle: " +  d.value + " records";
+                            tooltip_input = "";
+                }
+                
+                tooltip.html("<div class='chart-arrow'></div>"+tooltip_input + tooltip_text);
+                tooltip.style("visibility", "visible");
+               
+      })      
+      .on("mousemove", function() {
+          return tooltip.style("top", (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");
+      })
+      .on("mouseout", function(){ 
+
+           /*return tooltip.style("visibility", "hidden");*/
+            
+       })
+      .call(circleDragger);
+
+  var ghost_circle = svg.selectAll("g")
+          .data(circles)
+          .append("circle")
+          .attr("cx", function(d) { return d.x; })
+          .attr("cy", function(d) { return d.y; })
+          .attr("r", 60)
+          .attr("class",  "chart-nodelink")
+          .attr("id", function(d, i) { return  "node"+i; })
+          .attr("opacity", 0.0) // change this to non-zero to see the target area
+          .attr('pointer-events', 'mouseover')
+          .on("mouseover", overCircle)
+          .on("mouseout", outCircle);
+
+ //function to regenerate bubble chart with new axes
+   var redraw = function() {
+       links = []; 
+        
+        if (draggingNode !== null && selectedNode !== null) {
+            // have to flip the source coordinates since we did this for the existing connectors on the original node
+           
+            link_namespace.links = [{ x: selectedNode.x, y: selectedNode.y },
+                     { x: draggingNode.x, y: draggingNode.y }];
+ 
+            if(selectedNode !== draggingNode) {
+                  //console.log('draggingNode -> '+draggingNode.toSource());
+                  //console.log('selectedNode -> '+selectedNode.toSource());
+                  var  line = svg.selectAll(".chart-templink")
+                        .data(link_namespace.links)
+                        .enter().append('line')
+                        .attr('class', 'chart-templink');
+
+                    line.attr('x1', selectedNode.x )
+                        .attr('y1', selectedNode.y )
+                        .attr('x2', draggingNode.x )
+                        .attr('y2', draggingNode.y )
+                        .attr('pointer-events', 'none');
+            }
+        }
+    };//redraw
+
+    var merge = function(){
+               
+              if(typeof link_namespace.links !== 'undefined' && link_namespace.links.length > 0){
+
+                  var  combine = svg.selectAll(".chart-active")
+                                     .transition().duration(500)
+                                     .attr("cx", link_namespace.links[0].x)
+                                     .attr("cy", link_namespace.links[0].y);
+
+
+                  var append_class = function(){
+                                         var new_class = "";
+                                         new_class = svg.selectAll("#circle"+selectedNodeId).attr('merge_array');
+                                         
+                                         if(new_class) {
+                                             new_class += ","+selectedNodeId+','+draggingNodeId;
+                                         } else {
+                                             new_class = selectedNodeId+','+draggingNodeId;
+                                         }
+                                         //console.log("Class : "+new_class);
+                                         return new_class;
+                                      };
+                  // Increase the radius by 10%
+                   var expand_radius = function(){
+                                         var new_radius = "";
+                                         new_radius = parseInt(svg.selectAll("#circle"+selectedNodeId).attr('r')) + 
+                                          (parseInt(svg.selectAll("#circle"+selectedNodeId).attr('r')))*.10;
+                                         //console.log("Radius : "+new_radius);
+                                         return new_radius;
+                                      };
+
+                  var target_node = svg.selectAll("#circle"+selectedNodeId)
+                                       .transition().duration(500)
+                                       .attr("merge_array",  append_class())
+                                       .attr("r",  expand_radius());
+
+                                  //console.log("Radius : "+svg.selectAll("#circle"+selectedNodeId).attr('r'));
+                 
+                                   //console.log("draggingNodeId :"+draggingNodeId+ " selectedNodeId : "+selectedNodeId)
+                                   //after successful drag, remove both circles
+                                   d3.selectAll("#circle"+draggingNodeId).remove();
+                                   d3.selectAll("#node"+draggingNodeId).remove();
+                  
+                  var  remove_templink = svg.selectAll(".chart-templink")
+                                            .transition().duration(500)
+                                            .attr('class', '')
+                                            .remove();
+
+                link_namespace.links = selectedNodeId = draggingNodeId = "";
+              }    
+               
+          
+    };//merge
+</script>
+</html>

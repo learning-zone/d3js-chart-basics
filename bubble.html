@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>D3 Bubble Chart Example</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.15/d3.min.js"></script>
+</head>
+<body>
+    <h1>D3 Bubble Chart Example</h1>
+</body>
+<script type="text/javascript">
+    var dataArray = [20, 12, 5];
+
+    var svg = d3.select("body").append("svg").attr("height", "300px").attr("width", "600px").style('background', '#C9D7D6');
+
+    var newX = 50;
+        svg.selectAll("circle")
+            .data(dataArray)
+            .enter().append("circle")
+            .attr("cx", function (d, i) { newX += (d * 3) + (i * 100); return newX; })
+            .attr("cy", "150")
+            .attr("r", function (d) { return d * 3; })
+            .style("fill", "#1e90ff");
+</script>
+
+</html>
