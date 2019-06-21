@@ -1,11 +1,11 @@
 # D3.js Questions
 
 1. Explain d3.js selects method?
-1. Explain about d3.js Scales?
+1. Explain about d3.js scales?
 1. What are the slider available in d3.js?
 1. What is domain in d3.js?
 1. What is the role of “Path Data Generator” in d3.js?
-1. What is the role of d3.js Axis component?
+1. What is the role of d3.js axis component?
 1. Mention the command used to create simple axis in d3.js?
 1. What is SVG group element?
 1. What is a transition in d3.js?
