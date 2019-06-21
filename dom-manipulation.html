@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>DOM Manipulation using D3</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.15/d3.min.js"></script>
+    <style>
+        .error { color: red }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DOM Manipulation using D3</h1>
+        <div id="chart"></div>
+        <label>D3</label><input type="checkbox" />
+        <label>jQuery</label><input type="checkbox" />
+    </div>
+</body>
+<script type="text/javascript">
+/**
+------------------------------------------------------------------
+    Method	                    Description
+------------------------------------------------------------------
+text("content")	            Gets or sets the text of the selected element
+append("element name")	    Adds an element inside the selected element but just before the end of the selected element.
+insert("element name")	    Inserts a new element in the selected element
+remove()	                Removes the specified element from the DOM
+html("content")	            Gets or sets the inner HTML of selected element
+attr("name", "value")	    Gets or sets an attribute on the selected element.
+property("name", "value")	Gets or sets an attribute on the selected element.
+style("name", "value")	    Gets or sets the style of the selected element
+classed("css class", bool)	Gets, adds or removes a css class from the selection
+
+**/
+
+// text()
+d3.select("#chart").text("This is paragraph.");
+
+
+//append()
+d3.select("#chart").append("p").text("This is another paragraph.");
+
+
+//insert()
+d3.select("#chart").insert("p").text("Second paragraph.");
+
+
+//remove()
+d3.select("p").remove();
+
+
+//html()
+d3.select("p").html("<span>This was added in HTML</span>");
+
+
+//attr()
+d3.select("p").attr("class","error");
+
+
+//property()
+d3.select("input").property("checked",true);
+
+
+//style()
+d3.select("p").style("color", "green");
+
+
+//classed()
+ d3.select("p").classed('error', true);
+
+</script>
+</html>
