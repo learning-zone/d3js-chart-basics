@@ -8,7 +8,6 @@
 1. What is the role of d3.js Axis component?
 1. Mention the command used to create simple axis in d3.js?
 1. What is SVG group element?
-1. How you can several classes at once?
 1. What is a transition in d3.js?
 1. What is the command to interpolate two objects in d3.js?
 1. What is the command “d3.ascending (a, b)” is used?
