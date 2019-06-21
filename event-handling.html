@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>D3 Event Handling</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.15/d3.min.js"></script>
+    <style>
+        div {
+            height: 100px;
+            width: 100px;
+            background-color: steelblue;
+            margin:5px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+<script type="text/javascript">
+
+/**
+
+----------------------------------------------------------
+  Event Methods	                Description
+----------------------------------------------------------
+selection.on()	            Add or remove event listeners to capture event types like click, mouseover, mouseout etc.
+selection.dispatch()	    Captures event types like click, mouseover, mouseout. Typenames is the eventname, listener is the event listener
+d3.event	                Event object to access standard event fields such as timestamp or methods like preventDefault
+d3.mouse(container)	        Gets the x and y coordinates of the current mouse position in the specified DOM element.
+d3.touch()	                Gets the touch coordinates to a container
+
+**/
+
+
+d3.selectAll("div")
+      .on("mouseover", function(){
+          d3.select(this)
+            .style("background-color", "orange");
+
+          // Get current event info
+          console.log(d3.event);
+          
+          // Get x & y co-ordinates
+          console.log(d3.mouse(this));
+      })
+      .on("mouseout", function(){
+          d3.select(this)
+            .style("background-color", "steelblue")
+      });
+    
+    
+</script>
+</html>
