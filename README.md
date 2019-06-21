@@ -27,5 +27,5 @@
 1. How to format the date in d3.js?
 1. Explain axes in d3.js? How to create d3.js axes without numbering?
 1. How to calculate the area of the polygon in d3.js?
-1. How To data binding work in d3.js?
+1. How data binding work in d3.js?
 1. How to handle events in d3.js?
