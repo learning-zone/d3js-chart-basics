@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Data Binding in D3</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.15/d3.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+     <p>D3 Tutorials</p>
+</body>
+<script type="text/javascript">
+/**
+
+----------------------------------------------------------------------------------
+    Method	                Description
+----------------------------------------------------------------------------------
+ data()	        Joins data to the selected elements
+ enter()	    Creates a selection with placeholder references for missing elements
+ exit()	        Removes nodes and adds them to the exit selection which can be later removed from the DOM
+ datum()	    Injects data to the selected element without computing a join.
+
+**/
+
+//data()
+    var data = ["Hello World!"];
+    
+    var p = d3.select("body")
+            .selectAll("p")
+            .data(data)
+            .text(function (d) {
+                return d;
+            });
+</script>
+</html>
