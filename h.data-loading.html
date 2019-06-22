@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Data Loading in D3</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.15/d3.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Data Loading in D3</h1>
+        <div id="chart"></div>
+    </div>
+</body>
+<script type="text/javascript">
+
+/**
+
+------------------------------------------------------------------------------
+    Method	                        Description
+------------------------------------------------------------------------------
+d3.csv()	    Sends http request to the specified url to load .csv file or data and executes callback function with parsed csv data objects.
+d3.json()	    Sends http request to the specified url to load .json file or data and executes callback function with parsed json data objects.
+d3.tsv()	    Sends http request to the specified url to load a .tsv file or data and executes callback function with parsed tsv data objects.
+d3.xml()	    Sends http request to the specified url to load an .xml file or data and executes callback function with parsed xml data objects.
+
+**/
+
+
+// Example: Loading CSV Data
+d3.csv("../assets/employees.csv", function(data) {
+    for (var i = 0; i < data.length; i++) {
+        console.log('Name: '+data[i].Name + '  Age: '+data[i].Age);
+    }
+});
+
+
+// Example: JSON Object
+d3.json("../assets/users.json", function(data) {
+    console.log(data);
+});
+
+// Example: Load tsv Data
+d3.tsv("../assets/employees.tsv", function(data) {
+    for (var i = 0; i < data.length; i++) {
+        console.log('physical: '+ data[i].physical);
+        console.log('action: '+ data[i].action);
+        console.log('chair: ' + data[i].chair);
+        console.log('heading: ' + data[i].heading);
+        console.log('sitting: ' + data[i].sitting);
+        console.log('title: ' + data[i].title);
+    }
+});
+</script>
+</html>
