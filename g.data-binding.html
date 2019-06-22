@@ -7,7 +7,16 @@
 </head>
 <body>
     <div id="container"></div>
-     <p>D3 Tutorials</p>
+     <p>D3 Data Binding</p>
+     <p>D3 Data Binding</p>
+     <p>D3 Data Binding</p>
+     <p>D3 Data Binding</p>
+     <p>D3 Data Binding</p>
+     <p>D3 Data Binding</p>
+     <p>D3 Data Binding</p>
+     <p>D3 Data Binding</p>
+     <p>D3 Data Binding</p>
+     <p>D3 Data Binding</p>
 </body>
 <script type="text/javascript">
 /**
@@ -22,7 +31,7 @@
 
 **/
 
-//data()
+// Example: data() Method
     var data = ["Hello World!"];
     
     var p = d3.select("body")
@@ -31,5 +40,48 @@
             .text(function (d) {
                 return d;
             });
+
+
+// Example: Data Binding
+var data = [10, 20, 30, 40, 50];
+     
+    var p = d3.select("body")
+            .selectAll("p")
+            .data(data)
+            .text(function (d, i) {
+                return d;
+            });
+
+
+// Example: enter() Method
+var data = [4, 1, 6, 2, 8, 9];
+    var body = d3.select("body")
+                .selectAll("span")
+                .data(data)
+                .enter()
+                .append("span")
+                .text(function(d) { return d + " "; });
+
+
+// Example: exit() Method
+var data = ["Hello World!"];
+
+    var p = d3.select("body")
+                .selectAll("p")
+                .data(data)
+                .text(function (d, i) {
+                    return d;
+                })
+                .exit()
+                .remove();
+
+
+// Example: datum() Method
+      d3.select("body")
+        .select("p")
+        .datum(100)
+        .text(function (d, i) {
+            return d;
+        });
 </script>
 </html>
