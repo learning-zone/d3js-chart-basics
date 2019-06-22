@@ -1,6 +1,5 @@
 # D3.js Questions
 
-1. Explain d3.js selects method?
 1. Explain about d3.js scales?
 1. What are the slider available in d3.js?
 1. What is domain in d3.js?
