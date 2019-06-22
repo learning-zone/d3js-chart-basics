@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>D3 Color Scales</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.15/d3.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>D3 Color Scales</h1>
+        <div id="chart"></div>
+    </div>
+</body>
+<script type="text/javascript">
+
+/**
+-----------------------------------------------------------------------------------------------
+Scale Type	            Method	                        Description
+-----------------------------------------------------------------------------------------------
+Continuous	        d3.scaleLinear()	        Construct continuous linear scale where input data (domain) maps to specified output range.
+                    d3.scaleIdentity()	        Construct linear scale where input data is the same as output.
+                    d3.scaleTime()	            Construct linear scale where input data is in dates and output in numbers.
+                    d3.scaleLog()	            Construct logarithmic scale.
+                    d3.scaleSqrt()	            Construct square root scale.
+                    d3.scalePow()	            Construct exponential scale.
+Sequential	        d3.scaleSequential()	    Construct sequential scale where output range is fixed by interpolator function.
+Quantize	        d3.scaleQuantize()	        Construct quantize scale with discrete output range.
+Quantile	        d3.scaleQuantile()	        Construct quantile scale where input sample data maps to discrete output range.
+Threshold	        d3.scaleThreshold()	        Construct scale where arbitrary input data maps to discrete output range.
+Band	            d3.scaleBand()	            Band scales are like ordinal scales except the output range is continuous and numeric.
+Point	            d3.scalePoint()	            Construct point scale.
+Ordinal	            d3.scaleOrdinal()	        Construct ordinal scale where input data includes alphabets and are mapped to discrete numeric output range.
+
+**/
+
+    var bardata = [90, 45, 25, 15, 10, 7];
+     
+        var height = 400,
+            width = 600,
+            barWidth = 50,
+            barOffset = 5;
+
+        var colors = d3.scale.linear()
+            .domain([0, bardata.length])
+            .range(['#C61C6F', '#B58929'])
+
+        var yScale = d3.scale.linear()
+            .domain([0, d3.max(bardata)])
+            .range([0, height]);
+
+        var xScale = d3.scale.ordinal()
+            .domain(d3.range(0, bardata.length))
+            .rangeBands([0, width])
+
+        d3.select('#chart').append('svg')
+            .attr('width', width)
+            .attr('height', height)
+            .style('background', '#C9D7D6')
+            .selectAll('rect').data(bardata)
+            .enter().append('rect')
+            .style('fill', function (d, i) {
+                return colors(i);
+            })
+            .attr('width', xScale.rangeBand() - 10)
+            .attr('height', function (d) {
+                return yScale(d);
+            })
+            .attr('x', function (d, i) {
+                return xScale(i);
+            })
+            .attr('y', function (d) {
+                return height - yScale(d);
+            })
+</script>
+</html>
