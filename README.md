@@ -1,4 +1,6 @@
-# D3.js Questions
+## D3.js Interview Questions
+
+> Click :star: if you like the project. Pull Request are highly appreciated.
 
 1. Explain about d3.js scales?
 1. What are the slider available in d3.js?
