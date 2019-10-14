@@ -97,12 +97,6 @@ This command parses the specified string, which is the content of a CSV file, re
 #### Q. Mention what is the use of “Enter” and “Exit” selection in d3.js?
 By using “Enter” and “Exit” selection in d3.js, you can create new nodes for incoming data and eliminate outgoing nodes that are no longer required.
 
-#### Q. Explain about d3.js scales?
-#### Q. What are the slider available in d3.js?
-#### Q. What is domain in d3.js?
-#### Q. What is the role of “Path Data Generator” in d3.js?
-#### Q. What is the role of d3.js axis component?
-#### Q. Mention the command used to create simple axis in d3.js?
 #### Q. What is SVG group element?
 #### Q. What is a transition in d3.js?
 #### Q. What is the command to interpolate two objects in d3.js?
