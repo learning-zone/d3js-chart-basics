@@ -1,6 +1,6 @@
 ## D3.js Data Visualization Interview Questions
 
-> Click :star2: if you like the project. Pull Request are highly appreciated.
+*Click <img src="https://github.com/learning-zone/d3js-interview-questions/blob/master/assets/star.png" width="20" height="20" align="absmiddle" title="Star" /> if you like the project. Pull Request are highly appreciated.*
 
 #### Q. Explain what is d3.js?
 D3.js is a JavaScript library for creating and manipulating documents based on data.  It uses digital data to drive the formation and control of dynamic and interactive graphical presentation, which runs in web browsers.
