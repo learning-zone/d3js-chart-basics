@@ -23,7 +23,6 @@ D3.js scales come with
 * **Identity Scales**: It is good for pixel values
 * **Power and Logarithmic Scales**: It is used for exponentially increasing values like log,pow,sqrt
 
-
 #### Q. Mention what are the slider available in d3.js?
 The slider available in d3.js are
 
@@ -97,13 +96,6 @@ This command parses the specified string, which is the content of a CSV file, re
 #### Q. Mention what is the use of “Enter” and “Exit” selection in d3.js?
 By using “Enter” and “Exit” selection in d3.js, you can create new nodes for incoming data and eliminate outgoing nodes that are no longer required.
 
-#### Q. What is SVG group element?
-#### Q. What is a transition in d3.js?
-#### Q. What is the command to interpolate two objects in d3.js?
-#### Q. What is the command “d3.ascending (a, b)” is used?
-#### Q. What happens if no call back is specified for XML file in d3.js?
-#### Q. Mention the command to join the specified array of data in d3.js?
-#### Q. What is the use of “Enter” and “Exit” selection in d3.js?
 #### Q. Explain selections in d3.js ?
 #### Q. How d3.js identify on which elements to operate?
 #### Q. What is the best way to create the stacked chart in d3 js?
