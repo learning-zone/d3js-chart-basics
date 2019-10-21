@@ -4,7 +4,8 @@
 
 #### Q. How data binding work in d3.js?
 D3 includes the following important methods for data binding.
-|Method	  |Description         |
+
+|Method	  |Description |
 |---------|--------------------|
 |data()	  | Joins data to the selected elements|
 |enter()  |	Creates a selection with placeholder references for missing elements|
