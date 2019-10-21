@@ -452,7 +452,6 @@ By using `enter()` and `exit()` selection in d3.js, you can create new nodes for
 
 #### Q. How d3.js identify on which elements to operate?
 #### Q. What is the best way to create the stacked chart in d3 js?
-#### Q. How to import XML data using d3.js?
 #### Q. What is different between d3.scale.linear() and d3.scaleLinear()?
 #### Q. How to set initial zoom level in d3.js?
 #### Q. How to resize an SVG when the window is resized in d3.js?
