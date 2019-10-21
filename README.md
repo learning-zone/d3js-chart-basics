@@ -239,6 +239,12 @@ Now that you know what a domain and range is, you need a way to convert your dat
 
 The most common types of scales are – quantitative scales and ordinal scales.
 
+#### Q. What is the role of “Path Data Generator” in d3.js?
+D3.js includes a set of Path Data Generators helper classes for generating SVG Path instructions.
+```javascript
+d3.svg.line()
+```
+
 #### Q. What does path generators include in it?
 Path generator includes
 
