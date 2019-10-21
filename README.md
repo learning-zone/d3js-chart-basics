@@ -571,7 +571,19 @@ var svg = d3.select('body').append('svg')
 > formatDate(parseDate('2020-01-01'))
 "Jan-2020"
 ```
-#### Q. Explain axes in d3.js? How to create d3.js axes without numbering?
 #### Q. How to calculate the area of the polygon in d3.js?
+The `d3.polygonArea()` method returns the signed area of the specified polygon. If the vertices of the polygon are in counterclockwise order (assuming a coordinate system where the origin ⟨0,0⟩ is in the top-left corner), the returned area is positive; otherwise it is negative, or zero.
+```javascript
+var d = [
+  [-1, 415.44],
+  [146.93, 304.47],
+  [195.45, 152.13],
+  [-1, 134.64]
+];
+
+var area = d3.polygonArea(d);
+
+console.log(area) // Output: 36157.2759
+```
 #### Q. How data binding work in d3.js?
 #### Q. How to handle events in d3.js?
