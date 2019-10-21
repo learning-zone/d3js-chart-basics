@@ -167,13 +167,35 @@ d3.select('#chart').append('svg')
 The slider available in d3.js are
 
 * Default slider
+```javascript
+d3.slider()
+```
 * Slider with start value
+```javascript
+d3.slider().value(25)
+```
 * Slider with slide event
-* Slider with slide event
+```javascript
+d3.slider().on("slide", function(evt, value) {
+  d3.select('#slider3text').text(value);
+})
+```
+* Slider with default axis
+```javascript
+d3.slider().axis(true)
+```
 * Slider with custom axis
+```javascript
+d3.slider().axis( d3.svg.axis().orient("top").ticks(6) )
+```
 * Slider with min, max, and step values
+```javascript
+d3.slider().axis(true).min(2000).max(2100).step(5)
+```
 * Vertical Slider
-
+```javascript
+d3.slider().value(50).orientation("vertical")
+```
 #### Q. What is Domain in d3.js?
 In d3.js, domain is the start and end of your dataset. It can be any kind of value that can be compared in JavaScript. Domains have to change if your dataset changes.
 
