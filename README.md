@@ -73,6 +73,24 @@ D3 Selections allow data-driven transformation of the document object model (DOM
 |d3.select(css-selector)	|Returns the first matching element in the HTML document based on specified css-selector|
 |d3.selectAll(css-selector)	|Returns all the matching elements in the HTML document based on specified css-selector|
 
+```html
+<div class="container">
+    <h2>Select DOM Elements using D3</h2>
+    <section id="chart">
+        <div class="item">Barot Bellingham</div>
+        <div class="item">Hassum Harrod</div>
+        <div class="item">Jennifer Jerome</div>
+        <div class="item">Richard Tweet</div>
+        <div class="item">Lorenzo Garcia</div>
+        <div class="item">Xhou Ta</div>
+    </section>
+</div>
+```
+```javascript
+    d3.selectAll('.item:nth-child(2n)')
+            .style("color", "green");
+```
+
 [Live Example](https://learning-zone.github.io/d3js-interview-questions/b.selection.html)
 
 #### Q. Explain about d3.js Scales?
