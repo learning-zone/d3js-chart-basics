@@ -113,6 +113,54 @@ D3.js provides scale functions to perform data transformations. These functions 
 |Point	     |d3.scalePoint()	  |Construct point scale.|
 |Ordinal	 |d3.scaleOrdinal()	  |Construct ordinal scale where input data includes alphabets and are mapped to discrete numeric output range.|
 
+Example
+```html
+<div class="container">
+    <h1>D3 Color Scales</h1>
+    <div id="chart"></div>
+</div>
+```
+```javascript
+var bardata = [90, 45, 25, 15, 10, 7];
+     
+var height = 400,
+    width = 600,
+    barWidth = 50,
+    barOffset = 5;
+
+var colors = d3.scale.linear()
+    .domain([0, bardata.length])
+    .range(['#C61C6F', '#B58929']);
+
+var yScale = d3.scale.linear()
+    .domain([0, d3.max(bardata)])
+    .range([0, height]);
+
+var xScale = d3.scale.ordinal()
+    .domain(d3.range(0, bardata.length))
+    .rangeBands([0, width]);
+
+d3.select('#chart').append('svg')
+    .attr('width', width)
+    .attr('height', height)
+    .style('background', '#C9D7D6')
+    .selectAll('rect').data(bardata)
+    .enter().append('rect')
+    .style('fill', function (d, i) {
+        return colors(i);
+    })
+    .attr('width', xScale.rangeBand() - 10)
+    .attr('height', function (d) {
+        return yScale(d);
+    })
+    .attr('x', function (d, i) {
+        return xScale(i);
+    })
+    .attr('y', function (d) {
+        return height - yScale(d);
+    });
+```
+
 [Live Example](https://learning-zone.github.io/d3js-interview-questions/i.scales.html)
 
 #### Q. What are the slider available in d3.js?
