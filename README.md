@@ -44,6 +44,26 @@ SVG or Scalable Vector Graphics (SVG) is an XML, the markup language for determi
 [Live Example](https://learning-zone.github.io/d3js-interview-questions/a.svg.html) 
 
 #### Q. What is the difference between canvas and SVG in d3.js?
+SVG is abbreviated as **Scalable Vector Graphics**. It is a vector-based graphics and used the XML based format for graphics providing the support for interaction. SVG images are way better than bitmap images.  In SVG images, the vector image is composed of a fixed set of shapes and while scaling these images it preserves the shape of the image. 
+
+Canvas is an HTML element, which is used to draw graphics on the web page. It is referred to as a bitmap with an immediate mode graphics application programming interface. For drawing on it. The element canvas is used as a container for graphics. In Canvas, we need the script to draw the graphics.
+```html
+<canvas id="myCanvas" width="800" height="800"></canvas>
+```
+```javascript
+var canvas = document.getElementById('myCanvas');
+var context = canvas.getContext('2d');
+context.fillStyle = '#c00';
+context.fillRect(10, 10, 100, 100);
+```
+
+**Canvas vs SVG in D3**  
+With SVG, data binding is easy - we can assign a datum to an individual svg element and then use that datum to set its attributes/update it/etc. This is built upon the statefulness of svg - we can re-select a circle and modify it or access its properties.
+
+With Canvas, canvas is stateless, so we can't bind data to shapes within the canvas as the canvas only comprises of pixels. As such we can't select and update elements within the canvas because the canvas doesn't have any elements to select.
+
+Based on the above, we can see that the enter/update/exit cycle (or basic append statements) are needed for svg in idiomatic D3: we need to enter elements to see them and we style them often based on their datum. With canvas, we don't need to enter anything, same with exiting/updating. There are no elements to append in order to see, so we can draw visualizations without the enter/update/exit or the append/insert approaches used in d3 svg visualizations, if we want.
+
 
 #### Q. How D3.js selects method?
 D3.js select method uses CSS3 selectors to choose DOM elements.  D3 looks at the document and choose the first descendant DOM element that consists the tag body.  Once the element is selected, D3.js enables you to implement operators to the element selected.
