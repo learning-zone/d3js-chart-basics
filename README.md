@@ -257,6 +257,32 @@ Path generator includes
 * `d3.svg.diagonal()` - create a new diagonal generator
 * `d3.svg.diagonal.radial()` - create a new radial diagonal generator
 
+Example:
+```javascript
+//The data for our line
+var lineData = [ { "x": 1,   "y": 5},  { "x": 20,  "y": 20},
+                 { "x": 40,  "y": 10}, { "x": 60,  "y": 40},
+                 { "x": 80,  "y": 5},  { "x": 100, "y": 60}];
+
+//This is the accessor function we talked about above
+var lineFunction = d3.svg.line()
+                         .x(function(d) { return d.x; })
+                         .y(function(d) { return d.y; })
+                         .interpolate("linear");
+
+//The SVG Container
+var svgContainer = d3.select("body").append("svg")
+                                    .attr("width", 200)
+                                    .attr("height", 200);
+
+//The line SVG Path we draw
+var lineGraph = svgContainer.append("path")
+                            .attr("d", lineFunction(lineData))
+                            .attr("stroke", "blue")
+                            .attr("stroke-width", 2)
+                            .attr("fill", "none");
+```
+
 #### Q. What d3.js enter method does?
 D3.js enter method returns the virtual enter selection from the data operator.  This method is only applicable to Data Operator as such data operator is the only one that returns three virtual selections.
 
