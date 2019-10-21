@@ -94,7 +94,7 @@ By using the command d3.xml(url[mimeType][,callback]) XML file can be called. Th
 If no call back is specified, the returned request can be issued using xhr.get and handled using xhr.on.
 
 #### Q. Mention the command to join the specified array of data in d3.js?
-To join the specified array of data in d3.js you can use the command selection.data([values[,key]]).  The values here specifies the data for each group in the selection while a key function determines how data is connected to elements.
+To join the specified array of data in d3.js you can use the command `selection.data([values[,key]])`.  The values here specifies the data for each group in the selection while a key function determines how data is connected to elements.
 
 #### Q. Mention what does the command d3.csv.parseRows(string[,accessor]) ?
 This command parses the specified string, which is the content of a CSV file, returning an array of arrays representing the parsed rows.
