@@ -500,6 +500,17 @@ Constructs a new linear scale with the default domain [0,1] and the default rang
 Constructs a new continuous scale with the unit domain [0, 1], the unit range [0, 1], the default interpolator and clamping disabled. Linear scales are a good default choice for continuous quantitative data because they preserve proportional differences. Each range value y can be expressed as a function of the domain value x: y = mx + b.
 
 #### Q. How to set initial zoom level in d3.js?
+```javascript
+var zoom = d3.zoom().on("zoom", zooming);
+
+vis = svg.append("svg:svg")
+     .attr("width", width)
+     .attr("height", height)
+     .call(zoom) // here
+     .call(zoom.transform, d3.zoomIdentity.translate(100, 50).scale(0.5))
+     .append("svg:g")
+     .attr("transform","translate(100,50) scale(.5,.5)");
+```
 #### Q. How to resize an SVG when the window is resized in d3.js?
 #### Q. How to get mouse position in d3.js?
 #### Q. How to format the date in d3.js?
