@@ -95,13 +95,23 @@ Example:
 [Live Example](https://learning-zone.github.io/d3js-interview-questions/b.selection.html)
 
 #### Q. Explain about d3.js Scales?
-D3.js scales come with
+D3 provides the following scaling methods for different types of charts.
 
-* **Quantitative Scales**: The quantitative scales have a continuous domain like dates, times, real numbers etc.
-* **Ordinal Scales**: While the ordinal scales are for separate domains like categories, colors, names,
-* **Linear Scales**: It converts one value in the domain interval into a value in the range interval
-* **Identity Scales**: It is good for pixel values
-* **Power and Logarithmic Scales**: It is used for exponentially increasing values like log,pow,sqrt
+|Scale Type  |	Method	          |   Description |
+|------------|------------------- |----------------|
+|Continuous	 |d3.scaleLinear()    |Construct continuous linear scale where input data (domain) maps to specified output range.|
+|            |d3.scaleIdentity()  |Construct linear scale where input data is the same as output.|
+|            |d3.scaleTime()	  |Construct linear scale where input data is in dates and output in numbers.|
+|            |d3.scaleLog()	      |Construct logarithmic scale.|
+|            |d3.scaleSqrt()	  |Construct square root scale.|
+|            |d3.scalePow()	      |Construct exponential scale.|
+|Sequential	 |d3.scaleSequential()|Construct sequential scale where output range is fixed by interpolator function.|
+|Quantize	 |d3.scaleQuantize()  |Construct quantize scale with discrete output range.|
+|Quantile	 |d3.scaleQuantile()  |Construct quantile scale where input sample data maps to discrete output range.|
+|Threshold	 |d3.scaleThreshold() |Construct scale where arbitrary input data maps to discrete output range.|
+|Band	     |d3.scaleBand()	  |Band scales are like ordinal scales except the output range is continuous and numeric.|
+|Point	     |d3.scalePoint()	  |Construct point scale.|
+|Ordinal	 |d3.scaleOrdinal()	  |Construct ordinal scale where input data includes alphabets and are mapped to discrete numeric output range.|
 
 [Live Example](https://learning-zone.github.io/d3js-interview-questions/i.scales.html)
 
