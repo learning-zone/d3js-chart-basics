@@ -296,6 +296,14 @@ The command to create simple axis in d3.js is
 var xAxis = d3.svg.axis().
 ```
 
+
+|Axis Method	 |               Description          |
+|----------------|------------------------------------|
+|d3.axisTop()	 |Creates top horizontal axis.        |
+|d3.axisRight()	 |Creates vertical right-oriented axis.|
+|d3.axisBottom() |Creates bottom horizontal axis.      |
+|d3.axisLeft()	 |Creates left vertical axis.          |
+
 [Live Example](https://learning-zone.github.io/d3js-interview-questions/j.axis.html)
 
 #### Q. What is SVG group element?
