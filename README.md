@@ -32,13 +32,13 @@ D3.js scales come with
 #### Q. Mention what are the slider available in d3.js?
 The slider available in d3.js are
 
-Default slider
-Slider with start value
-Slider with slide event
-Slider with slide event
-Slider with custom axis
-Slider with min, max, and step values
-Vertical Slider
+* Default slider
+* Slider with start value
+* Slider with slide event
+* Slider with slide event
+* Slider with custom axis
+* Slider with min, max, and step values
+* Vertical Slider
 
 #### Q. Explain what is Domain in d3.js?
 In d3.js, domain is the start and end of your dataset. It can be any kind of value that can be compared in JavaScript. Domains have to change if your dataset changes.
