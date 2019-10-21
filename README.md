@@ -290,18 +290,13 @@ var numbers = [15, 8, 42, 4, 32];
 ```
 When our dataset contains more items than there are available DOM elements, the surplus data items are stored in a sub set of this selection called the *enter* selection.
 
-#### Q. What is the difference between jQuery and d3.js?
-
-#### Q. What is the role of D3.js Axis component?
-D3.js Axis component enables easy addition of a horizontal axis and the vertical axis to any graph. It shows reference lines for D3.js Scales automatically. It also allows you to draw a horizontal axis line, axis ticks and correct spacing to make axis appear appropriate.
-
 #### Q. Mention the command used to create simple axis in d3.js?
 The command to create simple axis in d3.js is var xAxis = d3.svg.axis().
 
 #### Q. What is SVG group element?
 SVG group element is used to group SVG element together; each SVG group element is a container which consists of child SVG elements.  It is defined by <g> and </g>.
 
-#### Q. How you can several classes at once?
+#### Q. How to apply multiple classes at once in D3?
 To set several classes at once you can use the object literal as
 
 selection.classed({ ‘foo’:true, ‘bar’: false})
