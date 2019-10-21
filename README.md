@@ -65,7 +65,13 @@ With Canvas, canvas is stateless, so we can't bind data to shapes within the can
 In D3js the `enter`/`update`/`exit` cycle (or basic append statements) are needed for svg in idiomatic D3: we need to enter elements to see them and we style them often based on their datum. With canvas, we don't need to enter anything, same with `exiting`/`updating`. There are no elements to append in order to see, so we can draw visualizations without the `enter`/`update`/`exit` or the append/insert approaches used in d3 svg visualizations.
 
 #### Q. Explain selections in d3.js?
-D3.js select method uses CSS3 selectors to choose DOM elements.  D3 looks at the document and choose the first descendant DOM element that consists the tag body.  Once the element is selected, D3.js enables you to implement operators to the element selected.
+D3 Selections allow data-driven transformation of the document object model (DOM): set attributes, styles, properties, HTML or text content, etc. Using the data join’s enter and exit selections, you can also add or remove elements to correspond to data.
+
+
+|Method	                    |Description |
+|---------------------------|---------------------------------------------------------------------------------------|
+|d3.select(css-selector)	|Returns the first matching element in the HTML document based on specified css-selector|
+|d3.selectAll(css-selector)	|Returns all the matching elements in the HTML document based on specified css-selector|
 
 [Live Example](https://learning-zone.github.io/d3js-interview-questions/b.selection.html)
 
