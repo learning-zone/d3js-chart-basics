@@ -196,6 +196,34 @@ d3.slider().axis(true).min(2000).max(2100).step(5)
 ```javascript
 d3.slider().value(50).orientation("vertical")
 ```
+
+Example:
+```html
+<p id="value"></p>
+<div id="slider"></div>
+```
+```javascript
+var slider = d3
+    .sliderHorizontal()
+    .min(0)
+    .max(10)
+    .step(1)
+    .width(300)
+    .displayValue(false)
+    .on('onchange', val => {
+      d3.select('#value').text(val);
+    });
+
+  d3.select('#slider')
+    .append('svg')
+    .attr('width', 500)
+    .attr('height', 100)
+    .append('g')
+    .attr('transform', 'translate(30,30)')
+    .call(slider);
+```
+[Live Example](https://learning-zone.github.io/d3js-interview-questions/slider.html)
+
 #### Q. What is Domain in d3.js?
 In d3.js, domain is the start and end of your dataset. It can be any kind of value that can be compared in JavaScript. Domains have to change if your dataset changes.
 
