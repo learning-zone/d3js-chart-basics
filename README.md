@@ -291,7 +291,12 @@ var numbers = [15, 8, 42, 4, 32];
 When our dataset contains more items than there are available DOM elements, the surplus data items are stored in a sub set of this selection called the *enter* selection.
 
 #### Q. Mention the command used to create simple axis in d3.js?
-The command to create simple axis in d3.js is var xAxis = d3.svg.axis().
+The command to create simple axis in d3.js is 
+```javascript
+var xAxis = d3.svg.axis().
+```
+
+[Live Example](https://learning-zone.github.io/d3js-interview-questions/j.axis.html)
 
 #### Q. What is SVG group element?
 SVG group element is used to group SVG element together; each SVG group element is a container which consists of child SVG elements.  It is defined by <g> and </g>.
