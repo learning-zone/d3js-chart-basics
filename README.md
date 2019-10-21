@@ -73,6 +73,7 @@ D3 Selections allow data-driven transformation of the document object model (DOM
 |d3.select(css-selector)	|Returns the first matching element in the HTML document based on specified css-selector|
 |d3.selectAll(css-selector)	|Returns all the matching elements in the HTML document based on specified css-selector|
 
+Example:
 ```html
 <div class="container">
     <h2>Select DOM Elements using D3</h2>
