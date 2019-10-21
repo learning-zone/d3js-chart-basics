@@ -557,6 +557,14 @@ d3.select("div#chartId")
    .attr("height", 400);
 ```
 #### Q. How to get mouse position in d3.js?
+```javascript
+var svg = d3.select('body').append('svg')
+    .attr('width', width)
+    .attr('height', height)
+    .on('mousemove', function() {
+      console.log( d3.event.clientX, d3.event.clientY ) // log the mouse x,y position
+    });
+```
 #### Q. How to format the date in d3.js?
 #### Q. Explain axes in d3.js? How to create d3.js axes without numbering?
 #### Q. How to calculate the area of the polygon in d3.js?
