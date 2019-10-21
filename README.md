@@ -566,6 +566,11 @@ var svg = d3.select('body').append('svg')
     });
 ```
 #### Q. How to format the date in d3.js?
+```javascript
+> formatDate = d3.time.format("%b-%Y")
+> formatDate(parseDate('2020-01-01'))
+"Jan-2020"
+```
 #### Q. Explain axes in d3.js? How to create d3.js axes without numbering?
 #### Q. How to calculate the area of the polygon in d3.js?
 #### Q. How data binding work in d3.js?
