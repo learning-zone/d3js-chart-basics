@@ -11,6 +11,8 @@ D3.js is extremely helpful in viewing huge data reports of account detail, e-com
 #### Q. Explain what is SVG?
 SVG or Scalable Vector Graphics (SVG) is an XML, the markup language for determining two-dimensional vector graphics. SVG is crucial for graphics what XHTML to text.
 
+* [Live Example](https://learning-zone.github.io/d3js-interview-questions/a.svg.html) 
+
 #### Q. Explain how D3.js selects method?
 D3.js select method uses CSS3 selectors to choose DOM elements.  D3 looks at the document and choose the first descendant DOM element that consists the tag body.  Once the element is selected, D3.js enables you to implement operators to the element selected.
 
