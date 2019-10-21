@@ -224,8 +224,20 @@ var slider = d3
 ```
 [Live Example](https://learning-zone.github.io/d3js-interview-questions/slider.html)
 
-#### Q. What is Domain in d3.js?
-In d3.js, domain is the start and end of your dataset. It can be any kind of value that can be compared in JavaScript. Domains have to change if your dataset changes.
+#### Q. What is difference between domain, range and scale in d3.js?
+**Domain**    
+```
+D for Domain, D for Data.
+```
+Domain represents the boundaries within which your data lies. e.g. If I had an array of numbers with no number smaller than 1 and no number larger than 100, my domain would be 1 to 100.
+
+**Range**  
+You usually make use of a range when you want to transform the value of a raw data point into a corresponding pixel coordinate.
+
+**Scale**  
+Now that you know what a domain and range is, you need a way to convert your data into corresponding values in the domain. And thats exactly what scales do.
+
+The most common types of scales are – quantitative scales and ordinal scales.
 
 #### Q. What is the role of “Path Data Generator” in d3.js?
 In respect to convert our data to the SVG path command, we have to tell the line Path Data Generator, about how to access the y and x co-ordinates from the data.
