@@ -42,7 +42,7 @@ Ordinal	            d3.scaleOrdinal()	        Construct ordinal scale where inpu
 
         var colors = d3.scale.linear()
             .domain([0, bardata.length])
-            .range(['#C61C6F', '#B58929'])
+            .range(['#C61C6F', '#B58929']);
 
         var yScale = d3.scale.linear()
             .domain([0, d3.max(bardata)])
@@ -50,7 +50,7 @@ Ordinal	            d3.scaleOrdinal()	        Construct ordinal scale where inpu
 
         var xScale = d3.scale.ordinal()
             .domain(d3.range(0, bardata.length))
-            .rangeBands([0, width])
+            .rangeBands([0, width]);
 
         d3.select('#chart').append('svg')
             .attr('width', width)
@@ -70,6 +70,6 @@ Ordinal	            d3.scaleOrdinal()	        Construct ordinal scale where inpu
             })
             .attr('y', function (d) {
                 return height - yScale(d);
-            })
+            });
 </script>
 </html>
