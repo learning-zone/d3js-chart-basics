@@ -27,6 +27,8 @@ D3.js scales come with
 * **Identity Scales**: It is good for pixel values
 * **Power and Logarithmic Scales**: It is used for exponentially increasing values like log,pow,sqrt
 
+[Live Example](https://learning-zone.github.io/d3js-interview-questions/i.scales.html)
+
 #### Q. Mention what are the slider available in d3.js?
 The slider available in d3.js are
 
