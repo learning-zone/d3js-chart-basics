@@ -298,8 +298,9 @@ SVG group element is used to group SVG element together; each SVG group element 
 
 #### Q. How to apply multiple classes at once in D3?
 To set multiple classes at once you can use the object literal as
-
+```javascript
 selection.classed({ ‘foo’:true, ‘bar’: false})
+```
 
 #### Q. What is a transition in d3.js?
 Transition in d3.js gradually interpolate attributes and styles over time, transition is used for animation purpose.  It is based on only two key frames, start, and end.  The starting key frame defines the current state of the DOM, while the ending key frame is a set of styles, attributes and other properties you specified.
