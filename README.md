@@ -430,13 +430,13 @@ myChart.transition()
 [Live Example](https://learning-zone.github.io/d3js-interview-questions/s.transitions.html)
 
 #### Q. What is the command to interpolate two objects in d3.js?
-To interpolate two objects in d3.js command d3.interpolateObject(a,b) is used. Object interpolation is useful particularly for data space interpolation, where data is interpolated rather than attribute values.
+To interpolate two objects in d3.js command `d3.interpolateObject(a,b)` is used. Object interpolation is useful particularly for data space interpolation, where data is interpolated rather than attribute values.
 
 #### Q. What is the command “d3.ascending (a, b)” is used?
 This command is comparator function that is used for a natural order, and can be used along with the built-in-array sort method to arrange elements in ascending order.
 
 #### Q. How XML file is called in d3.js?
-By using the command d3.xml(url[mimeType][,callback]) XML file can be called. This command will create a request for the XML file at the specified url. If a call back is declared, the request will be immediately processed with the GET method and the call back will be invoked when the file is loaded, or request fails.
+By using the command `d3.xml(url[mimeType][,callback])` XML file can be called. This command will create a request for the XML file at the specified url. If a call back is declared, the request will be immediately processed with the GET method and the call back will be invoked when the file is loaded, or request fails.
 
 #### Q. What happens if no call back is specified for XML file in d3.js?
 If no call back is specified, the returned request can be issued using xhr.get and handled using xhr.on.
@@ -448,7 +448,7 @@ To join the specified array of data in d3.js you can use the command `selection.
 This command parses the specified string, which is the content of a CSV file, returning an array of arrays representing the parsed rows.
 
 #### Q. What is the use of “Enter” and “Exit” selection in d3.js?
-By using “Enter” and “Exit” selection in d3.js, you can create new nodes for incoming data and eliminate outgoing nodes that are no longer required.
+By using `enter()` and `exit()` selection in d3.js, you can create new nodes for incoming data and eliminate outgoing nodes that are no longer required.
 
 #### Q. How d3.js identify on which elements to operate?
 #### Q. What is the best way to create the stacked chart in d3 js?
