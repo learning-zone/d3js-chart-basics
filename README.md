@@ -43,6 +43,8 @@ SVG or Scalable Vector Graphics (SVG) is an XML, the markup language for determi
 
 [Live Example](https://learning-zone.github.io/d3js-interview-questions/a.svg.html) 
 
+#### Q. What is the difference between canvas and SVG in d3.js?
+
 #### Q. How D3.js selects method?
 D3.js select method uses CSS3 selectors to choose DOM elements.  D3 looks at the document and choose the first descendant DOM element that consists the tag body.  Once the element is selected, D3.js enables you to implement operators to the element selected.
 
@@ -135,7 +137,6 @@ By using “Enter” and “Exit” selection in d3.js, you can create new nodes
 #### Q. How to set initial zoom level in d3.js?
 #### Q. How to resize an SVG when the window is resized in d3.js?
 #### Q. How to get mouse position in d3.js?
-#### Q. What is the difference between canvas and SVG in d3.js?
 #### Q. How to format the date in d3.js?
 #### Q. Explain axes in d3.js? How to create d3.js axes without numbering?
 #### Q. How to calculate the area of the polygon in d3.js?
