@@ -245,13 +245,17 @@ D3.js includes a set of Path Data Generators helper classes for generating SVG P
 d3.svg.line()
 ```
 
-#### Q. What does path generators include in it?
 Path generator includes
 
-* `svg.line`- Make a new line generator
-* `svg.line.radial`- Make a new radial line generator
-* `svg.area` – Make a new area generator
-* `svg.chord` – Make a new chord generator and so on
+* `d3.svg.line()` - create a new line generator
+* `d3.svg.line.radial()` - create a new radial line generator
+* `d3.svg.area()` - create a new area generator
+* `d3.svg.area.radial()` - create a new radial area generator
+* `d3.svg.arc()` - create a new arc generator
+* `d3.svg.symbol()` - create a new symbol generator
+* `d3.svg.chord()` - create a new chord generator
+* `d3.svg.diagonal()` - create a new diagonal generator
+* `d3.svg.diagonal.radial()` - create a new radial diagonal generator
 
 #### Q. What d3.js enter method does?
 D3.js enter method returns the virtual enter selection from the data operator.  This method is only applicable to Data Operator as such data operator is the only one that returns three virtual selections.
