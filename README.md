@@ -586,4 +586,86 @@ var area = d3.polygonArea(d);
 console.log(area) // Output: 36157.2759
 ```
 #### Q. How data binding work in d3.js?
+D3 includes the following important methods for data binding.
+|Method	  |Description         |
+|---------|--------------------|
+|data()	  | Joins data to the selected elements|
+|enter()  |	Creates a selection with placeholder references for missing elements|
+|exit()	  |  Removes nodes and adds them to the exit selection which can be later removed from the DOM|
+|datum()  |	Injects data to the selected element without computing a join.|
+
+**Example: data() Method**  
+ The data() function is used to join the specified array of data to the selected DOM elements and return the updated selection. D3 works with different types of data like Array, CSV, TSV, JSON, XML etc.
+```html
+<body>
+    <p>D3 Data Binding Example </p>
+
+    <script>
+        var myData = [1, 2, 3, 4, 5];
+     
+         var p = d3.select("body")
+                   .selectAll("p")
+                   .data(myData)
+                   .text(function (d, i) {
+                        return d;
+                    });
+    </script>
+</body>
+```
+
+**Example: enter() Method**  
+The enter() method dynamically creates placeholder references corresponding to the number of data values. The output of enter()can be fed to append() method and append() will create DOM elements for which there are no corresponding DOM elements on the page.
+```html
+<body>
+<script>
+    var data = [4, 1, 6, 2, 8, 9];
+    var body = d3.select("body")
+                .selectAll("span")
+                .data(data)
+                .enter()
+                .append("span")
+                .text(function(d) { return d + " "; });
+</script>
+</body>
+```
+
+**Example: exit() Method**  
+While enter() is used to add new reference nodes, exit is used to remove a node.
+```html
+<body>
+    <p>D3 exit Example</p>
+    <p></p>
+    <p></p>
+    <script>
+    
+    var myData = ["Hello World!"];
+
+    var p = d3.select("body")
+                .selectAll("p")
+                .data(myData)
+                .text(function (d, i) {
+                    return d;
+                })
+                .exit()
+                .remove();
+    </script>
+</body>
+```
+
+**Example: datum() Method**  
+The datum() function is used for static visualization which does not need updates. It binds data directly to an element.
+```html
+<body>
+    <p>D3 datum Example</p>
+    <script>
+
+    d3.select("body")
+        .select("p")
+        .datum(100)
+        .text(function (d, i) {
+            return d;
+        });
+    </script>
+</body>
+```
 #### Q. How to handle events in d3.js?
