@@ -285,6 +285,10 @@ var lineGraph = svgContainer.append("path")
 
 #### Q. What d3.js enter method does?
 D3.js enter method returns the virtual enter selection from the data operator.  This method is only applicable to Data Operator as such data operator is the only one that returns three virtual selections.
+```javascript
+var numbers = [15, 8, 42, 4, 32];
+```
+When our dataset contains more items than there are available DOM elements, the surplus data items are stored in a sub set of this selection called the *enter* selection.
 
 #### Q. What is the difference between jQuery and d3.js?
 
