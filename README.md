@@ -492,7 +492,7 @@ g.append("g")
         .attr("width", x.bandwidth());
 
 ```
-#### Q. What is different between d3.scale.linear() and d3.scaleLinear()?
+#### Q. What is difference between d3.scale.linear() and d3.scaleLinear()?
 #### Q. How to set initial zoom level in d3.js?
 #### Q. How to resize an SVG when the window is resized in d3.js?
 #### Q. How to get mouse position in d3.js?
