@@ -2,11 +2,6 @@
 
 *Click <img src="https://github.com/learning-zone/d3js-interview-questions/blob/master/assets/star.png" width="18" height="18" align="absmiddle" title="Star" /> if you like the project. Pull Request are highly appreciated.*
 
-#### Q. Explain what is d3.js?
-D3.js is a JavaScript library used to create interactive visualizations in the browser. The D3.js library allows us to manipulate elements of a webpage in the context of a data set. These elements can be HTML, SVG, or Canvas elements and can be introduced, removed, or edited according to the contents of the data set. It is a library for manipulating the DOM objects. D3.js can be a valuable aid in data exploration, it gives you control over your data's representation and lets you add interactivity.
-
-#### Q. When using d3.js is helpful?
-D3.js is extremely helpful in viewing huge data reports of account detail, e-commerce budgeting, population, etc.  For such data’s, data visualization is the best way understand, represent and analyze it.
 
 #### Q. Explain what is SVG?
 SVG or Scalable Vector Graphics (SVG) is an XML, the markup language for determining two-dimensional vector graphics. SVG is crucial for graphics what XHTML to text.
