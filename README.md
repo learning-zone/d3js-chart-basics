@@ -64,7 +64,7 @@ With Canvas, canvas is stateless, so we can't bind data to shapes within the can
 
 In D3js the `enter`/`update`/`exit` cycle (or basic append statements) are needed for svg in idiomatic D3: we need to enter elements to see them and we style them often based on their datum. With canvas, we don't need to enter anything, same with `exiting`/`updating`. There are no elements to append in order to see, so we can draw visualizations without the `enter`/`update`/`exit` or the append/insert approaches used in d3 svg visualizations.
 
-#### Q. How D3.js selects method?
+#### Q. Explain selections in d3.js?
 D3.js select method uses CSS3 selectors to choose DOM elements.  D3 looks at the document and choose the first descendant DOM element that consists the tag body.  Once the element is selected, D3.js enables you to implement operators to the element selected.
 
 [Live Example](https://learning-zone.github.io/d3js-interview-questions/b.selection.html)
@@ -148,11 +148,10 @@ This command parses the specified string, which is the content of a CSV file, re
 #### Q. What is the use of “Enter” and “Exit” selection in d3.js?
 By using “Enter” and “Exit” selection in d3.js, you can create new nodes for incoming data and eliminate outgoing nodes that are no longer required.
 
-#### Q. Explain selections in d3.js ?
 #### Q. How d3.js identify on which elements to operate?
 #### Q. What is the best way to create the stacked chart in d3 js?
 #### Q. How to import XML data using d3.js?
-#### Q. What is different between d3.scale.linear() and d3.scaleLinear().
+#### Q. What is different between d3.scale.linear() and d3.scaleLinear()?
 #### Q. How to set initial zoom level in d3.js?
 #### Q. How to resize an SVG when the window is resized in d3.js?
 #### Q. How to get mouse position in d3.js?
