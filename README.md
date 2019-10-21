@@ -513,6 +513,49 @@ vis = svg.append("svg:svg")
      .attr("transform","translate(100,50) scale(.5,.5)");
 ```
 #### Q. How to resize an SVG when the window is resized in d3.js?
+```css
+.svg-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* aspect ratio */
+  vertical-align: top;
+  overflow: hidden;
+}
+.svg-content-responsive {
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
+
+svg .rect {
+  fill: gold;
+  stroke: steelblue;
+  stroke-width: 5px;
+}
+```
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
+<div id="chartId"></div>
+```
+```javascript
+d3.select("div#chartId")
+   .append("div")
+   // Container class to make it responsive.
+   .classed("svg-container", true) 
+   .append("svg")
+   // Responsive SVG needs these 2 attributes and no width and height attr.
+   .attr("preserveAspectRatio", "xMinYMin meet")
+   .attr("viewBox", "0 0 600 400")
+   // Class to make it responsive.
+   .classed("svg-content-responsive", true)
+   // Fill with a rectangle for visualization.
+   .append("rect")
+   .classed("rect", true)
+   .attr("width", 600)
+   .attr("height", 400);
+```
 #### Q. How to get mouse position in d3.js?
 #### Q. How to format the date in d3.js?
 #### Q. Explain axes in d3.js? How to create d3.js axes without numbering?
