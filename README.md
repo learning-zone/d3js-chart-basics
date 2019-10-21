@@ -49,10 +49,10 @@ In respect to convert our data to the SVG path command, we have to tell the line
 #### Q. Mention what does path generators include in it?
 Path generator includes
 
-svg.line- Make a new line generator
-svg.line.radial- Make a new radial line generator
-svg.area – Make a new area generator
-svg.chord – Make a new chord generator and so on
+* `svg.line`- Make a new line generator
+* `svg.line.radial`- Make a new radial line generator
+* `svg.area` – Make a new area generator
+* `svg.chord` – Make a new chord generator and so on
 
 #### Q. Explain what d3.js enter method does?
 D3.js enter method returns the virtual enter selection from the data operator.  This method is only applicable to Data Operator as such data operator is the only one that returns three virtual selections.
