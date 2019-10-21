@@ -297,7 +297,7 @@ The command to create simple axis in d3.js is var xAxis = d3.svg.axis().
 SVG group element is used to group SVG element together; each SVG group element is a container which consists of child SVG elements.  It is defined by <g> and </g>.
 
 #### Q. How to apply multiple classes at once in D3?
-To set several classes at once you can use the object literal as
+To set multiple classes at once you can use the object literal as
 
 selection.classed({ ‘foo’:true, ‘bar’: false})
 
