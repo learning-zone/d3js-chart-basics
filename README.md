@@ -450,7 +450,48 @@ This command parses the specified string, which is the content of a CSV file, re
 #### Q. What is the use of “Enter” and “Exit” selection in d3.js?
 By using `enter()` and `exit()` selection in d3.js, you can create new nodes for incoming data and eliminate outgoing nodes that are no longer required.
 
-#### Q. What is the best way to create the stacked chart in d3 js?
+#### Q. What is the best way to create the stacked barchart using d3.js?
+```javascript
+var data = [
+  {"ORDER": 1, "apples": 3840, "bananas": 1920, "cherries": 960},
+  {"ORDER": 2, "apples": 1600, "bananas": 1440, "cherries": 960},
+  {"ORDER": 3, "apples":  640, "bananas":  960, "cherries": 640},
+  {"ORDER": 4, "apples":  320, "bananas":  480, "cherries": 640}
+];
+
+var h = 200;
+var w = 200;
+var svg = d3.select('body').append('svg').attr('width',w).attr('height',h);
+var g = svg.append('g');
+
+
+var x = d3.scaleBand().rangeRound([0, w-50]);
+var y = d3.scaleLinear().range([h-50, 0]).domain([0,10000]);
+var color = ['#bae4bc','#7bccc4','#43a2ca'];
+
+var stack = d3.stack()
+    .keys(["apples", "bananas", "cherries"])
+    .order(d3.stackOrderNone)
+    .offset(d3.stackOffsetNone);
+    
+var series = stack(data);
+
+x.domain(data.map(function(d) { return d.ORDER; }));
+
+g.append("g")
+    .selectAll("g")
+    .data(series)
+    .enter().append("g")
+        .attr("fill", function(d,i) { return color[i]; })
+    .selectAll("rect")
+    .data(function(d) { return d; })
+    .enter().append("rect")
+        .attr("x", function(d) { return x(d.data.ORDER); })
+        .attr("y", function(d) { return y(d[1]); })
+        .attr("height", function(d) { return y(d[0]) - y(d[1]); })
+        .attr("width", x.bandwidth());
+
+```
 #### Q. What is different between d3.scale.linear() and d3.scaleLinear()?
 #### Q. How to set initial zoom level in d3.js?
 #### Q. How to resize an SVG when the window is resized in d3.js?
