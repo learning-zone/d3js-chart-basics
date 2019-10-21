@@ -450,7 +450,6 @@ This command parses the specified string, which is the content of a CSV file, re
 #### Q. What is the use of “Enter” and “Exit” selection in d3.js?
 By using `enter()` and `exit()` selection in d3.js, you can create new nodes for incoming data and eliminate outgoing nodes that are no longer required.
 
-#### Q. How d3.js identify on which elements to operate?
 #### Q. What is the best way to create the stacked chart in d3 js?
 #### Q. What is different between d3.scale.linear() and d3.scaleLinear()?
 #### Q. How to set initial zoom level in d3.js?
