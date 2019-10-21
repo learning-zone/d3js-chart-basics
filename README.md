@@ -5,6 +5,41 @@
 
 #### Q. What is SVG?
 SVG or Scalable Vector Graphics (SVG) is an XML, the markup language for determining two-dimensional vector graphics. SVG is crucial for graphics what XHTML to text.
+```html
+<!-- Rectangle -->
+<div>Rectangle</div>
+<svg width="200" height="200">
+    <rect x="5" y="5" width="190" height="190" fill="#1e90ff"></rect>
+</svg>
+
+
+<!-- Line -->
+<div>Line</div>
+<svg height="200" width="200">
+    <line x1="0" y1="0" x2="200" y2="200" style="stroke:rgb(255,0,0);stroke-width:2" />
+</svg>
+
+
+<!-- Circle -->
+<div>Circle</div>
+<svg height="200" width="200">
+    <circle cx="100" cy="100" r="45" stroke="#333" stroke-width="2" fill="orange" />
+</svg>
+
+
+<!-- Text -->
+<div>Text</div>
+<svg height="200" width="250">
+    <text x="10" y="120" font-family="sans-serif" font-size="25" style="fill: #333;">SVG Text Example</text>
+</svg>
+
+
+<!-- Polyline -->
+<div>Polyline</div>
+<svg height="200" width="200">
+    <polyline points="10 35, 30 10, 50 35" stroke="green" fill="transparent" stroke-width="2" />
+</svg>
+```
 
 [Live Example](https://learning-zone.github.io/d3js-interview-questions/a.svg.html) 
 
