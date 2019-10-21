@@ -493,6 +493,15 @@ g.append("g")
 
 ```
 #### Q. What is difference between d3.scale.linear() and d3.scaleLinear()?
+**version 3: d3.scale.linear()**  
+
+Constructs a new linear scale with the default domain [0,1] and the default range [0,1]. Thus, the default linear scale is equivalent to the identity function for numbers; for example linear(0.5) returns 0.5.
+
+**version 4: d3.scaleLinear()**  
+
+Constructs a new continuous scale with the unit domain [0, 1], the unit range [0, 1], the default interpolator and clamping disabled. Linear scales are a good default choice for continuous quantitative data because they preserve proportional differences. Each range value y can be expressed as a function of the domain value x: y = mx + b.
+
+
 #### Q. How to set initial zoom level in d3.js?
 #### Q. How to resize an SVG when the window is resized in d3.js?
 #### Q. How to get mouse position in d3.js?
