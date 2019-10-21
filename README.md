@@ -95,7 +95,7 @@ Example:
 [Live Example](https://learning-zone.github.io/d3js-interview-questions/b.selection.html)
 
 #### Q. Explain about d3.js Scales?
-D3 provides the following scaling methods for different types of charts.
+D3.js provides scale functions to perform data transformations. These functions map an input domain to an output range. D3 provides the following scaling methods for different types of charts.
 
 |Scale Type  |	Method	          |   Description |
 |------------|------------------- |----------------|
