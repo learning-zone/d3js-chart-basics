@@ -686,3 +686,41 @@ The following table lists important event handling method and objects.
 |d3.event	          | Event object to access standard event fields such as timestamp or methods like preventDefault|
 |d3.mouse(container)  |Gets the x and y coordinates of the current mouse position in the specified DOM element.|
 |d3.touch()	          | Gets the touch coordinates to a container|
+
+Example: Event Handling
+```html
+<!doctype html>
+<html>
+<head>
+    <style>
+        div {
+            height: 100px;
+            width: 100px;
+            background-color: steelblue;
+            margin: 5px;
+        }
+    </style>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+<div> </div>
+<script>
+    d3.selectAll("div")
+      .on("mouseover", function(){
+          d3.select(this)
+            .style("background-color", "orange");
+
+          // Get current event info
+          console.log(d3.event);
+          
+          // Get x & y co-ordinates
+          console.log(d3.mouse(this));
+      })
+      .on("mouseout", function(){
+          d3.select(this)
+            .style("background-color", "steelblue")
+      });
+</script>
+</body>
+</html>
+```
