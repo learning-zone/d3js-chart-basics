@@ -669,3 +669,20 @@ var area = d3.polygonArea(d);
 console.log(area) // Output: 36157.2759
 ```
 #### Q. How to handle events in d3.js?
+The `on()` method adds an event listener to all selected DOM elements.
+
+Syntax
+```javascript
+d3.selection.on(type[, listener[, capture]]);
+```
+The first parameter is an event type as string such as "click", "mouseover" etc. The second parameter is a callback function which will be executed when an event occurs and the third optional parameter capture flag may be specified.
+
+The following table lists important event handling method and objects.
+
+|Event Methods	      |Description                                                                                |
+|---------------------|-------------------------------------------------------------------------------------------|
+|selection.on()	      |  Add or remove event listeners to capture event types like click, mouseover, mouseout etc.|
+|selection.dispatch() |	Captures event types like click, mouseover, mouseout. Typenames is the eventname, listener is the event listener |
+|d3.event	          | Event object to access standard event fields such as timestamp or methods like preventDefault|
+|d3.mouse(container)  |Gets the x and y coordinates of the current mouse position in the specified DOM element.|
+|d3.touch()	          | Gets the touch coordinates to a container|
