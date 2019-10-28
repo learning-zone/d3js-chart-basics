@@ -1,6 +1,6 @@
-### D3.js COMMANDS 
+## D3.js COMMANDS 
 
-### D3.js Functions List
+#### D3.js Functions List
 
 |Sl.No.| Functions                    | Example                           |
 |------|------------------------------|-----------------------------------|
@@ -13,7 +13,7 @@
 |  07. |svg.append('title').text(function(d){return d;});| tooltip          |
 
 
-### D3.js Selections List
+#### D3.js Selections List
 
 |Sl.No.| Selections        | Description                           |Example                          |
 |------|-------------------|-------------------------------------- |---------------------------------|
