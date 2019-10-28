@@ -11,6 +11,15 @@
 |  05. |svg.duration(500)             |                                     |
 |  06. |svg.ease('linear')            |      elastic, circle, bounce        |
 |  07. |svg.append('title').text(function(d){return d;});| tooltip          |
+|  08. |d3.svg.line()	 			| create a new line generator|
+|  09. |d3.svg.line.radial()	 	| create a new radial line generator|
+|  10. |d3.svg.area() 				| create a new area generator|
+|  11. |d3.svg.area.radial() 		| create a new radial area generator|
+|  12. |d3.svg.arc() 				| create a new arc generator|
+|  13. |d3.svg.symbol() 			| create a new symbol generator|
+|  14. |d3.svg.chord() 				| create a new chord generator|
+|  15. |d3.svg.diagonal() 			| create a new diagonal generator|
+|  16. |d3.svg.diagonal.radial() 	| create a new radial diagonal generator|
 
 
 #### D3.js Selections List
