@@ -1,6 +1,6 @@
 ## D3.js COMMANDS 
 
-#### D3.js Functions List
+#### D3.js Functions 
 
 |Sl.No.| Functions                    | Example                           |
 |------|------------------------------|-----------------------------------|
@@ -22,7 +22,7 @@
 |  16. |d3.svg.diagonal.radial() 	| create a new radial diagonal generator|
 
 
-#### D3.js Selections List
+#### D3.js Selections 
 
 |Sl.No.| Selections        | Description                           |Example                          |
 |------|-------------------|-------------------------------------- |---------------------------------|
@@ -34,3 +34,15 @@
 | 06.  |selection.attr()   |Set an HTML attribute value on the selection |d3.selectAll("circle").attr("r",	10)|
 | 07.  |selection.style()  |Set an inline CSS style on the selection 	|d3.selectAll("circle").style("fill",        	"teal")|
 | 08.  |selection.classed()| Adds or removes a class from the selection    |d3.select("circle").classed  ("highlight",	true)|
+
+
+#### D3.js Transitions
+
+|Sl.No.| Selections     | Description                   |Example                          |
+|------|----------------|-------------------------------|---------------------------------|
+|      |selection.transition() 	|						|Starts a transition on this selection. |
+|      |.duration 				|Number of milliseconds)| Specifies the time during which the transition will take place. Default is 250ms.|
+|      |.delay 			|Number of milliseconds |Specicies the time that the system will wait before firing the transition. default is 0 (instant). |
+|      |.attr 			|String (attr. name), value |The target attributes for the selection.|
+|      |.style 			|String (style name), value |The target styles for the selection. |
+|      |.each 			|“end”, function 			|This launches function at the end of the current transition.|
