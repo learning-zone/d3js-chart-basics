@@ -41,7 +41,7 @@
 |Sl.No.| Selections     | Description                   |Example                          |
 |------|----------------|-------------------------------|---------------------------------|
 | 01.  |selection.transition() 	|						|Starts a transition on this selection. |
-| 02.  |.duration 				|Number of milliseconds)| Specifies the time during which the transition will take place. Default is 250ms.|
+| 02.  |.duration 				|Number of milliseconds | Specifies the time during which the transition will take place. Default is 250ms.|
 | 03.  |.delay 			|Number of milliseconds |Specicies the time that the system will wait before firing the transition. default is 0 (instant). |
 | 04. |.attr 			|String (attr. name), value |The target attributes for the selection.|
 | 05. |.style 			|String (style name), value |The target styles for the selection. |
