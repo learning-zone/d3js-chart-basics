@@ -112,3 +112,15 @@ var s3=d3.scale.threshold().domain([0,2,5,10]).range([50,100,150,200]);s3(3) // 
 var s4=d3.scale.quantile().domain([0,10]).range([0,1,2,3]); s4(4) // 1
 var s5=d3.scale.linear().domain([0,10]).range([50,100]).clamp([true]); s5(15) // 100
 ```
+
+#### D3.js Force Layout 
+
+|Sl.No.| Method         | Description                                                                   |
+|------|----------------|-------------------------------------------------------------------------------|
+| 01. |nodes | 	Nodes is an array of objects that will be used as the nodes.                            |
+| 02. |gravity | It is a force that can push nodes towards the center of the layout.	                |
+| 03. |friction  | At each step of the tick, node movement is scaled by this friction. The recommended range of friction is 0 to 1, with 0 being no movement and 1 being no friction.|
+| 04. |charge | The charge in a force layout refers to how nodes in the environment push away from one another or attract one another. Kind of like magnets, nodes have a charge that can be positive (attraction force) or negative (repelling force).|	
+| 05. |alpha | The alpha is the layout is described as the simulation’s cooling factor.|
+
+
