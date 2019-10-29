@@ -8,6 +8,37 @@
 * [D3.js Functions List](d3-functions-list.md)
 
 
+|Sl.No  | D3.js Questions  |
+|-------|------------------|
+|01. |[How data binding work in d3.js?](#q-how-data-binding-work-in-d3js)|
+|02. |[What is SVG?](#q-what-is-svg)|
+|03. |[What is the difference between canvas and SVG in d3.js?](#q-what-is-the-difference-between-canvas-and-svg-in-d3js)|
+|04. |[Explain selections in d3.js?](#q-explain-selections-in-d3js)|
+|05. |[Explain about d3.js Scales?](#q-explain-about-d3js-scales)|
+|06. |[What are the slider available in d3.js?](#q-what-are-the-slider-available-in-d3js)|
+|07. |[What is difference between domain, range and scale in d3.js?](#q-what-is-difference-between-domain-range-and-scale-in-d3js)|
+|08. |[What is the role of “Path Data Generator” in d3.js?](#q-what-is-the-role-of-path-data-generator-in-d3js)|
+|09. |[What d3.js enter method does?](#q-what-d3js-enter-method-does)|
+|10. |[Mention the command used to create simple axis in d3.js?](#q-mention-the-command-used-to-create-simple-axis-in-d3js)|
+|11. |[What is SVG group element?](#q-what-is-svg-group-element)|
+|12. |[How to apply multiple classes at once in D3?](#q-how-to-apply-multiple-classes-at-once-in-d3)|
+|13. |[What is a transition in d3.js?](#q-what-is-a-transition-in-d3js)|
+|14. |[What is the command to interpolate two objects in d3.js?](#q-what-is-the-command-to-interpolate-two-objects-in-d3js)|
+|15. |[What is the command “d3.ascending (a, b)” is used?](#q-what-is-the-command-d3ascending-a-b-is-used)|
+|16. |[How XML file is called in d3.js?](#q-how-xml-file-is-called-in-d3js)|
+|17. |[What happens if no call back is specified for XML file in d3.js?](#q-what-happens-if-no-call-back-is-specified-for-xml-file-in-d3js)|
+|18. |[Mention the command to join the specified array of data in d3.js?](#q-mention-the-command-to-join-the-specified-array-of-data-in-d3js)|
+|19. |[What does the command d3.csv.parseRows(string[,accessor]) ?](#q-what-does-the-command-d3csvparserows-string-accessor-)|
+|20. |[What is the use of “Enter” and “Exit” selection in d3.js?](#q-what-is-the-use-of-enter-and-exit-selection-in-d3js)|
+|21. |[What is the best way to create the stacked barchart using d3.js?](#q-what-is-the-best-way-to-create-the-stacked-barchart-using-d3js)|
+|22. |[What is difference between d3.scale.linear() and d3.scaleLinear()?](#q-what-is-difference-between-d3scalelinear-and-d3scalelinear-)|
+|23. |[How to set initial zoom level in d3.js?](#q-how-to-set-initial-zoom-level-in-d3js)|
+|24. |[How to resize an SVG when the window is resized in d3.js?](#q-how-to-resize-an-svg-when-the-window-is-resized-in-d3js)|
+|25. |[How to get mouse position in d3.js?](#q-how-to-get-mouse-position-in-d3js)|
+|26. |[How to format the date in d3.js?](#q-how-to-format-the-date-in-d3js)|
+|27. |[How to calculate the area of the polygon in d3.js?](#q-how-to-calculate-the-area-of-the-polygon-in-d3js)|
+|28. |[How to handle events in d3.js?](#q-how-to-handle-events-in-d3js)|
+
 
 #### Q. How data binding work in d3.js?
 D3 includes the following important methods for data binding.
