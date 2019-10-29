@@ -124,6 +124,10 @@ The datum() function is used for static visualization which does not need update
     </script>
 </body>
 ```
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. What is SVG?
 SVG or Scalable Vector Graphics (SVG) is an XML, the markup language for determining two-dimensional vector graphics. SVG is crucial for graphics what XHTML to text.
 ```html
@@ -163,6 +167,9 @@ SVG or Scalable Vector Graphics (SVG) is an XML, the markup language for determi
 ```
 
 [Live Example](https://learning-zone.github.io/d3js-interview-questions/a.svg.html) 
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. What is the difference between canvas and SVG in d3.js?
 SVG is abbreviated as **Scalable Vector Graphics**. It is a vector-based graphics and used the XML based format for graphics providing the support for interaction. SVG images are way better than bitmap images.  In SVG images, the vector image is composed of a fixed set of shapes and while scaling these images it preserves the shape of the image. 
@@ -214,6 +221,9 @@ Example:
 ```
 
 [Live Example](https://learning-zone.github.io/d3js-interview-questions/b.selection.html)
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. Explain about d3.js Scales?
 D3.js provides scale functions to perform data transformations. These functions map an input domain to an output range. D3 provides the following scaling methods for different types of charts.
@@ -283,6 +293,9 @@ d3.select('#chart').append('svg')
 ```
 
 [Live Example](https://learning-zone.github.io/d3js-interview-questions/i.scales.html)
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. What are the slider available in d3.js?
 The slider available in d3.js are
@@ -344,6 +357,9 @@ var slider = d3
     .call(slider);
 ```
 [Live Example](https://learning-zone.github.io/d3js-interview-questions/slider.html)
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. What is difference between domain, range and scale in d3.js?
 **Domain**    
@@ -403,6 +419,9 @@ var lineGraph = svgContainer.append("path")
                             .attr("stroke-width", 2)
                             .attr("fill", "none");
 ```
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. What d3.js enter method does?
 D3.js enter method returns the virtual enter selection from the data operator.  This method is only applicable to Data Operator as such data operator is the only one that returns three virtual selections.
@@ -464,6 +483,9 @@ var xAxisTranslate = height/2 + 10;
 ```
 
 [Live Example](https://learning-zone.github.io/d3js-interview-questions/j.axis.html)
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. What is SVG group element?
 SVG group element is used to group SVG element together; each SVG group element is a container which consists of child SVG elements.  It is defined by <g> and </g>.
@@ -510,8 +532,10 @@ Example:
 </body>
 </html>
 ```
-
 [Live Example](https://learning-zone.github.io/d3js-interview-questions/s.transitions.html)
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. What is the command to interpolate two objects in d3.js?
 To interpolate two objects in d3.js command `d3.interpolateObject(a,b)` is used. Object interpolation is useful particularly for data space interpolation, where data is interpolated rather than attribute values.
@@ -576,6 +600,10 @@ g.append("g")
         .attr("width", x.bandwidth());
 
 ```
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. What is difference between d3.scale.linear() and d3.scaleLinear()?
 **version 3: d3.scale.linear()**  
 Constructs a new linear scale with the default domain [0,1] and the default range [0,1]. Thus, the default linear scale is equivalent to the identity function for numbers; for example linear(0.5) returns 0.5.
@@ -640,6 +668,10 @@ d3.select("div#chartId")
    .attr("width", 600)
    .attr("height", 400);
 ```
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. How to get mouse position in d3.js?
 ```javascript
 var svg = d3.select('body').append('svg')
@@ -725,3 +757,6 @@ Example: Event Handling
 </body>
 </html>
 ```
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
