@@ -38,7 +38,7 @@
 
 #### D3.js Transitions
 
-|Sl.No.| Method         | Description                   |Example                          |
+|Sl.No.| Method         | Value                   |Description                          |
 |------|----------------|-------------------------------|---------------------------------|
 | 01.  |selection.transition() 	|						|Starts a transition on this selection. |
 | 02.  |.duration 				|Number of milliseconds | Specifies the time during which the transition will take place. Default is 250ms.|
@@ -47,6 +47,17 @@
 | 05. |.style 			|String (style name), value |The target styles for the selection. |
 | 06. |.each 			|“end”, function 			|This launches function at the end of the current transition.|
 
+Example
+```javascript
+// moves that rectangle to 100 pixels from the left of its container
+d3.select("rect").transition().delay(100).duration(1000).attr("x",100) 
+
+// turns it to red
+d3.select("rect").transition().style("fill","red"); 
+
+// makes it transparent, and when it's completely transparent, delete it.
+d3.select("rect").transition().style("opacity",0).each("end",function() {d3.select(this).remove();}) 
+```
 
 #### D3.js Scales
 
