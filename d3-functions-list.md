@@ -57,3 +57,14 @@
 | 03. |scale.range() 	|Sets the scale’s output range 	 	 	|.range([	0,	width	]);|
 | 04. |d3.min() 		|Returns the smallest value in an array |d3.min([	10,	20,	70,	35	])		//	Returns	10|
 | 05. |d3.max() 		|Returns the largest value in an array 	|d3.max([	10,	20,	70,	35	])		//	Returns	70|
+
+
+#### D3.js Axes
+
+|Sl.No.| Selections     | Description                                  |Example                          |
+|------|----------------|----------------------------------------------|---------------------------------|
+| 01. |d3.svg.axis() 	|Creates a new axis generator function 		   |var	xAxis =	d3.svg.axis()|
+| 02. |axis.scale() 	|Specifies the scale to be used with this axis |	 	 	.scale(xScale)|
+| 03. |axis.orient() 	|Specifies the orientation for this axis 	   | 			.orient("bottom")|
+| 04. |axis.ticks() 	|Suggests a number of ticks for this axis 	   | 			.ticks(5);|
+| 05. |selection.call() |Calls a method; used to generate an axis 	   |	svg.append("g").call(xAxis);|
