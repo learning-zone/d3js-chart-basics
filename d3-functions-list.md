@@ -68,3 +68,26 @@
 | 03. |axis.orient() 	|Specifies the orientation for this axis 	   | 			.orient("bottom")|
 | 04. |axis.ticks() 	|Suggests a number of ticks for this axis 	   | 			.ticks(5);|
 | 05. |selection.call() |Calls a method; used to generate an axis 	   |	svg.append("g").call(xAxis);|
+
+
+#### D3.js Quantitative scales
+
+|Sl.No.| Method         | Description                                                                   |
+|------|----------------|-------------------------------------------------------------------------------|
+| 01.  |d3.scale 		|The beginning of every scale. 
+| 02.  |domain 			|The interval of values to transform. It is an array of 2 or more ordered values. 
+| 03.  |range 			|The interval of values in which to be transformed. 
+| 04.  |Linear 			|The linear scale transforms one value in the domain interval into a value in the range interval     (without transformation)| 
+| 05.  |pow 				|The pow scale transforms one value in the domain interval, raised to a certain power, into one value in the range interval.|
+| 06.  |Exponent 		|For the pow scale, the exponent method allows to specify an exponent (1 by default, equivalent to     linear).
+| 07.  |sqrt 			|Transforms the square root of one value in the domain interval into one value in the range    interval. Equivalent to d3.scale.pow().exponent(.5)|
+| 08.  |log 				|Transforms the log of one value in the domain interval into one value in the range interval.
+| 09.  |identity 		|The identity scale doesn’t transform a value, but is useful when you need a scale object, specify     a range etc.|
+| 10.  |quantize 		|If the value is between the kth and the k+1th value of the domain, returns the kth value of the    range. |
+| 11.  |threshold 		|If the value is between the kth and the k+1th value of the domain, returns the k+1th value of the     range.|
+| 12.  |quantile 		|This is the one scale that doesn’t require the domain and range to have the same cardinality. It divides the domain into i intervals, where i is the cardinality of the range array. Then, if a value if in the kth interval, it returns the kth value of the range. |									
+| 13.|invert 			|The opposite of the scale. If s is a scale and s(x)=y, then s.invert()(y) = x. 
+| 14.|nice 			|Extends the domain of the scale so that its bound are round values.
+| 15.|rangeRound 		|(use instead of range). Makes it so that the output of the range are rounded to integer values.
+| 16.|interpolate 		|Takes a function (“factory”). Allows to override how d3 maps values from the domain to the range.
+| 17.|clamp 			|If set to [true], if a value is outside the domain, it will be transformed into either the lower or the upper bound of the range.|
