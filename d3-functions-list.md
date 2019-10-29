@@ -2,7 +2,7 @@
 
 #### D3.js Functions 
 
-|Sl.No.| Functions                    | Example                           |
+|Sl.No.| Method                       | Example                           |
 |------|------------------------------|-----------------------------------|
 |  01. |d3.scale()                    |  d3.scale.linear(), d3.scale.log(), d3.scale.pow()|
 |  02. |d3.svg.axis()                 |                                     |
@@ -24,7 +24,7 @@
 
 #### D3.js Selections 
 
-|Sl.No.| Selections        | Description                           |Example                          |
+|Sl.No.| Method            | Description                           |Example                          |
 |------|-------------------|-------------------------------------- |---------------------------------|
 | 01.  |d3.select() 	   |Returns the element found 					|d3.select("svg")|
 | 02.  |d3.selectAll() 	   |Returns all found elements 					|d3.selectAll("circle")|
@@ -38,7 +38,7 @@
 
 #### D3.js Transitions
 
-|Sl.No.| Selections     | Description                   |Example                          |
+|Sl.No.| Method         | Description                   |Example                          |
 |------|----------------|-------------------------------|---------------------------------|
 | 01.  |selection.transition() 	|						|Starts a transition on this selection. |
 | 02.  |.duration 				|Number of milliseconds | Specifies the time during which the transition will take place. Default is 250ms.|
@@ -50,7 +50,7 @@
 
 #### D3.js Scales
 
-|Sl.No.| Selections     | Description                           |Example                          |
+|Sl.No.| Method         | Description                           |Example                          |
 |------|----------------|---------------------------------------|---------------------------------|
 | 01. |d3.scale.linear()|Creates a new linear scale function 	|var	xScale	=	d3.scale.linear()|
 | 02. |scale.domain() 	|Sets the scale’s input domain 	 	 	|.domain([	0,	2000	])|
@@ -61,7 +61,7 @@
 
 #### D3.js Axes
 
-|Sl.No.| Selections     | Description                                  |Example                          |
+|Sl.No.| Method         | Description                                  |Example                          |
 |------|----------------|----------------------------------------------|---------------------------------|
 | 01. |d3.svg.axis() 	|Creates a new axis generator function 		   |var	xAxis =	d3.svg.axis()|
 | 02. |axis.scale() 	|Specifies the scale to be used with this axis |	 	 	.scale(xScale)|
