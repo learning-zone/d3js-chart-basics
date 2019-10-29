@@ -47,3 +47,13 @@
 | 05. |.style 			|String (style name), value |The target styles for the selection. |
 | 06. |.each 			|“end”, function 			|This launches function at the end of the current transition.|
 
+
+#### D3.js Scales
+
+|Sl.No.| Selections     | Description                           |Example                          |
+|------|----------------|---------------------------------------|---------------------------------|
+| 01. |d3.scale.linear()|Creates a new linear scale function 	|var	xScale	=	d3.scale.linear()|
+| 02. |scale.domain() 	|Sets the scale’s input domain 	 	 	|.domain([	0,	2000	])|
+| 03. |scale.range() 	|Sets the scale’s output range 	 	 	|.range([	0,	width	]);|
+| 04. |d3.min() 		|Returns the smallest value in an array |d3.min([	10,	20,	70,	35	])		//	Returns	10|
+| 05. |d3.max() 		|Returns the largest value in an array 	|d3.max([	10,	20,	70,	35	])		//	Returns	70|
