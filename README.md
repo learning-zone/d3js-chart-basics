@@ -5,9 +5,8 @@
 
 ### Table of Contents
 
-* [D3.js Functions List](d3-functions-list.md)
+* [D3.js Functions List](d3-functions-list.md)  
 
-* <a href="https://github.com/learning-zone/d3js-interview-questions/blob/master/d3-functions-list.md" target="_blank">D3.js Functions List</a>
 
 
 |Sl.No  | D3.js Questions  |
