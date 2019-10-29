@@ -91,3 +91,13 @@
 | 15.|rangeRound 		|(use instead of range). Makes it so that the output of the range are rounded to integer values.
 | 16.|interpolate 		|Takes a function (“factory”). Allows to override how d3 maps values from the domain to the range.
 | 17.|clamp 			|If set to [true], if a value is outside the domain, it will be transformed into either the lower or the upper bound of the range.|
+
+
+Example: **Quantitative scales**
+```javascript
+var s1=d3.scale.linear().domain([0,10]).range([50,100]); s1(5) // 75
+		var s2=d3.scale.pow().domain([0,10]).rangeRound([50,100]).exponent(2); s2(9) // 91
+		var s3=d3.scale.threshold().domain([0,2,5,10]).range([50,100,150,200]);s3(3) // 150
+		var s4=d3.scale.quantile().domain([0,10]).range([0,1,2,3]); s4(4) // 1
+		var s5=d3.scale.linear().domain([0,10]).range([50,100]).clamp([true]); s5(15) // 100
+```
