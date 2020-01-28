@@ -35,6 +35,9 @@
 | 07.  |selection.style()  |Set an inline CSS style on the selection 	|d3.selectAll("circle").style("fill",        	"teal")|
 | 08.  |selection.classed()| Adds or removes a class from the selection    |d3.select("circle").classed  ("highlight",	true)|
 
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### D3.js Transitions
 
@@ -123,4 +126,6 @@ var s5=d3.scale.linear().domain([0,10]).range([50,100]).clamp([true]); s5(15) //
 | 04. |charge | The charge in a force layout refers to how nodes in the environment push away from one another or attract one another. Kind of like magnets, nodes have a charge that can be positive (attraction force) or negative (repelling force).|	
 | 05. |alpha | The alpha is the layout is described as the simulation’s cooling factor.|
 
-
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
