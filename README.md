@@ -10,6 +10,8 @@
 
 <br/>
 
+`&#x1F534;`
+
 #### Q. How data binding work in d3.js?
 D3 includes the following important methods for data binding.
 
