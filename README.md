@@ -10,7 +10,7 @@
 
 <br/>
 
-#### Q. ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `How data binding work in d3.js?`
+#### Q. ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) How data binding work in d3.js?
 
 #### Q. How data binding work in d3.js?
 D3 includes the following important methods for data binding.
