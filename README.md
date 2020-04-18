@@ -1,13 +1,14 @@
-## D3.js Data Visualization Interview Questions with Example
+# D3.js Data Visualization Interview Questions with Example
 
 *Click <img src="https://github.com/learning-zone/d3js-interview-questions/blob/master/assets/star.png" width="18" height="18" align="absmiddle" title="Star" /> if you like the project. Pull Request are highly appreciated.*
 
 
-### Table of Contents
+## Table of Contents
 
 * *[D3.js Functions List](d3-functions-list.md)*  
 
 
+<br/>
 
 #### Q. How data binding work in d3.js?
 D3 includes the following important methods for data binding.
