@@ -1,16 +1,15 @@
-# D3.js Data Visualization Interview Questions with Example
+# D3.js Interview Questions and Answers
 
 *Click <img src="https://github.com/learning-zone/d3js-interview-questions/blob/master/assets/star.png" width="18" height="18" align="absmiddle" title="Star" /> if you like the project. Pull Request are highly appreciated.*
-
 
 ## Table of Contents
 
 * *[D3.js Functions List](d3-functions-list.md)*  
 
-
 <br/>
 
-#### Q. ***How data binding work in d3.js?***
+## Q. ***How data binding work in d3.js?***
+
 D3 includes the following important methods for data binding.
 
 |Method	  |Description |
@@ -20,8 +19,9 @@ D3 includes the following important methods for data binding.
 |exit()	  |  Removes nodes and adds them to the exit selection which can be later removed from the DOM|
 |datum()  |	Injects data to the selected element without computing a join.|
 
-**Example: data() Method**  
- The data() function is used to join the specified array of data to the selected DOM elements and return the updated selection. D3 works with different types of data like Array, CSV, TSV, JSON, XML etc.
+**data()**
+
+The data() function is used to join the specified array of data to the selected DOM elements and return the updated selection. D3 works with different types of data like Array, CSV, TSV, JSON, XML etc.
 ```html
 <body>
     <p>D3 Data Binding Example </p>
@@ -39,8 +39,10 @@ D3 includes the following important methods for data binding.
 </body>
 ```
 
-**Example: enter() Method**  
+**enter()**
+
 The enter() method dynamically creates placeholder references corresponding to the number of data values. The output of enter()can be fed to append() method and append() will create DOM elements for which there are no corresponding DOM elements on the page.
+
 ```html
 <body>
 <script>
@@ -55,8 +57,10 @@ The enter() method dynamically creates placeholder references corresponding to t
 </body>
 ```
 
-**Example: exit() Method**  
+**exit()**
+
 While enter() is used to add new reference nodes, exit is used to remove a node.
+
 ```html
 <body>
     <p>D3 exit Example</p>
@@ -78,8 +82,10 @@ While enter() is used to add new reference nodes, exit is used to remove a node.
 </body>
 ```
 
-**Example: datum() Method**  
+**datum()**
+
 The datum() function is used for static visualization which does not need updates. It binds data directly to an element.
+
 ```html
 <body>
     <p>D3 datum Example</p>
@@ -94,12 +100,15 @@ The datum() function is used for static visualization which does not need update
     </script>
 </body>
 ```
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. ***What is SVG?***
+## Q. ***What is SVG?***
+
 SVG or Scalable Vector Graphics (SVG) is an XML, the markup language for determining two-dimensional vector graphics. SVG is crucial for graphics what XHTML to text.
+
 ```html
 <!-- Rectangle -->
 <div>Rectangle</div>
@@ -136,34 +145,44 @@ SVG or Scalable Vector Graphics (SVG) is an XML, the markup language for determi
 </svg>
 ```
 
-[Live Example](https://learning-zone.github.io/d3js-interview-questions/a.svg.html) 
+[Live Example](https://learning-zone.github.io/d3js-interview-questions/a.svg.html)
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. ***What is the difference between canvas and SVG in d3.js?***
+## Q. ***What is the difference between canvas and SVG in d3.js?***
+
 SVG is abbreviated as **Scalable Vector Graphics**. It is a vector-based graphics and used the XML based format for graphics providing the support for interaction. SVG images are way better than bitmap images.  In SVG images, the vector image is composed of a fixed set of shapes and while scaling these images it preserves the shape of the image. 
 
 Canvas is an HTML element, which is used to draw graphics on the web page. It is referred to as a bitmap with an immediate mode graphics application programming interface. For drawing on it. The element canvas is used as a container for graphics. In Canvas, we need the script to draw the graphics.
+
 ```html
 <canvas id="myCanvas" width="800" height="800"></canvas>
 ```
-```javascript
+
+```js
 var canvas = document.getElementById('myCanvas');
 var context = canvas.getContext('2d');
 context.fillStyle = '#c00';
 context.fillRect(10, 10, 100, 100);
 ```
 
-**Canvas vs SVG in D3**  
+**Canvas vs SVG in D3**
+
 With SVG, data binding is easy - we can assign a datum to an individual svg element and then use that datum to set its attributes/update it/etc. This is built upon the statefulness of svg - we can re-select a circle and modify it or access its properties.
 
-With Canvas, canvas is stateless, so we can't bind data to shapes within the canvas as the canvas only comprises of pixels. As such we can't select and update elements within the canvas because the canvas doesn't have any elements to select.
+With Canvas, canvas is stateless, so we can\'t bind data to shapes within the canvas as the canvas only comprises of pixels. As such we can\'t select and update elements within the canvas because the canvas doesn\'t have any elements to select.
 
-In D3js the `enter`/`update`/`exit` cycle (or basic append statements) are needed for svg in idiomatic D3: we need to enter elements to see them and we style them often based on their datum. With canvas, we don't need to enter anything, same with `exiting`/`updating`. There are no elements to append in order to see, so we can draw visualizations without the `enter`/`update`/`exit` or the append/insert approaches used in d3 svg visualizations.
+In D3js the `enter`/`update`/`exit` cycle (or basic append statements) are needed for svg in idiomatic D3: we need to enter elements to see them and we style them often based on their datum. With canvas, we don\'t need to enter anything, same with `exiting`/`updating`. There are no elements to append in order to see, so we can draw visualizations without the `enter`/`update`/`exit` or the append/insert approaches used in d3 svg visualizations.
 
-#### Q. ***Explain selections in d3.js?***
-D3 Selections allow data-driven transformation of the document object model (DOM): set attributes, styles, properties, HTML or text content, etc. Using the data join’s enter and exit selections, you can also add or remove elements to correspond to data.
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***Explain selections in d3.js?***
+
+D3 Selections allow data-driven transformation of the document object model (DOM): set attributes, styles, properties, HTML or text content, etc. Using the data join\'s enter and exit selections, you can also add or remove elements to correspond to data.
 
 
 |Method	                    |Description |
@@ -171,7 +190,7 @@ D3 Selections allow data-driven transformation of the document object model (DOM
 |d3.select(css-selector)	|Returns the first matching element in the HTML document based on specified css-selector|
 |d3.selectAll(css-selector)	|Returns all the matching elements in the HTML document based on specified css-selector|
 
-Example:
+*Example:*
 ```html
 <div class="container">
     <h2>Select DOM Elements using D3</h2>
@@ -185,17 +204,19 @@ Example:
     </section>
 </div>
 ```
-```javascript
+```js
     d3.selectAll('.item:nth-child(2n)')
             .style("color", "green");
 ```
 
 [Live Example](https://learning-zone.github.io/d3js-interview-questions/b.selection.html)
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. ***Explain about d3.js Scales?***
+## Q. ***Explain about d3.js Scales?***
+
 D3.js provides scale functions to perform data transformations. These functions map an input domain to an output range. D3 provides the following scaling methods for different types of charts.
 
 |Scale Type  |	Method	          |   Description |
@@ -221,7 +242,7 @@ Example
     <div id="chart"></div>
 </div>
 ```
-```javascript
+```js
 var bardata = [90, 45, 25, 15, 10, 7];
      
 var height = 400,
@@ -263,50 +284,52 @@ d3.select('#chart').append('svg')
 ```
 
 [Live Example](https://learning-zone.github.io/d3js-interview-questions/i.scales.html)
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. ***What are the slider available in d3.js?***
+## Q. ***What are the slider available in d3.js?***
+
 The slider available in d3.js are
 
 * Default slider
-```javascript
+```js
 d3.slider()
 ```
 * Slider with start value
-```javascript
+```js
 d3.slider().value(25)
 ```
 * Slider with slide event
-```javascript
+```js
 d3.slider().on("slide", function(evt, value) {
   d3.select('#slider3text').text(value);
 })
 ```
 * Slider with default axis
-```javascript
+```js
 d3.slider().axis(true)
 ```
 * Slider with custom axis
-```javascript
+```js
 d3.slider().axis( d3.svg.axis().orient("top").ticks(6) )
 ```
 * Slider with min, max, and step values
-```javascript
+```js
 d3.slider().axis(true).min(2000).max(2100).step(5)
 ```
 * Vertical Slider
-```javascript
+```js
 d3.slider().value(50).orientation("vertical")
 ```
 
-Example:
+**Example:**
 ```html
 <p id="value"></p>
 <div id="slider"></div>
 ```
-```javascript
+```js
 var slider = d3
     .sliderHorizontal()
     .min(0)
@@ -327,12 +350,15 @@ var slider = d3
     .call(slider);
 ```
 [Live Example](https://learning-zone.github.io/d3js-interview-questions/slider.html)
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. ***What is difference between domain, range and scale in d3.js?***
-**Domain**    
+## Q. ***What is difference between domain, range and scale in d3.js?***
+
+**Domain**
+
 ```
 D for Domain, D for Data.
 ```
@@ -346,9 +372,14 @@ Now that you know what a domain and range is, you need a way to convert your dat
 
 The most common types of scales are – quantitative scales and ordinal scales.
 
-#### Q. ***What is the role of “Path Data Generator” in d3.js?***
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***What is the role of “Path Data Generator” in d3.js?***
+
 D3.js includes a set of Path Data Generators helper classes for generating SVG Path instructions.
-```javascript
+```js
 d3.svg.line()
 ```
 
@@ -364,8 +395,8 @@ Path generator includes
 * `d3.svg.diagonal()` - create a new diagonal generator
 * `d3.svg.diagonal.radial()` - create a new radial diagonal generator
 
-Example:
-```javascript
+*Example:*
+```js
 //The data for our line
 var lineData = [ { "x": 1,   "y": 5},  { "x": 20,  "y": 20},
                  { "x": 40,  "y": 10}, { "x": 60,  "y": 40},
@@ -389,20 +420,29 @@ var lineGraph = svgContainer.append("path")
                             .attr("stroke-width", 2)
                             .attr("fill", "none");
 ```
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. ***What d3.js enter method does?***
+## Q. ***What d3.js enter method does?***
+
 D3.js enter method returns the virtual enter selection from the data operator.  This method is only applicable to Data Operator as such data operator is the only one that returns three virtual selections.
-```javascript
+
+```js
 var numbers = [15, 8, 42, 4, 32];
 ```
+
 When our dataset contains more items than there are available DOM elements, the surplus data items are stored in a sub set of this selection called the *enter* selection.
 
-#### Q. ***Mention the command used to create simple axis in d3.js?***
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***Mention the command used to create simple axis in d3.js?***
+
 The command to create simple axis in d3.js is 
-```javascript
+```js
 var xAxis = d3.svg.axis().
 ```
 
@@ -414,14 +454,14 @@ var xAxis = d3.svg.axis().
 |d3.axisBottom() |Creates bottom horizontal axis.      |
 |d3.axisLeft()	 |Creates left vertical axis.          |
 
-Example:
+*Example:*
 ```html
 <div class="container">
     <h1>Axes in D3</h1>
     <div id="chart"></div>
 </div>
 ```
-```javascript
+```js
 var width = 500, height = 500;
 var data = [10, 20, 30, 40, 50];
 var svg = d3.select("body")
@@ -453,20 +493,24 @@ var xAxisTranslate = height/2 + 10;
 ```
 
 [Live Example](https://learning-zone.github.io/d3js-interview-questions/j.axis.html)
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. ***What is SVG group element?***
-SVG group element is used to group SVG element together; each SVG group element is a container which consists of child SVG elements.  It is defined by <g> and </g>.
+## Q. ***What is SVG group element?***
 
-#### Q. ***How to apply multiple classes at once in D3?***
+SVG group element is used to group SVG element together; each SVG group element is a container which consists of child SVG elements.  It is defined by `<g>` and `</g>`.
+
+## Q. ***How to apply multiple classes at once in D3?***
+
 To set multiple classes at once you can use the object literal as
-```javascript
-selection.classed({ ‘foo’:true, ‘bar’: false})
+```js
+selection.classed({ 'foo':true, 'bar': false})
 ```
 
-#### Q. ***What is a transition in d3.js?***
+## Q. ***What is a transition in d3.js?***
+
 Transition in d3.js gradually interpolate attributes and styles over time, transition is used for animation purpose.  It is based on only two key frames, start, and end.  The starting key frame defines the current state of the DOM, while the ending key frame is a set of styles, attributes and other properties specified.
 
 |Method	               |Description                                           |
@@ -476,7 +520,7 @@ Transition in d3.js gradually interpolate attributes and styles over time, trans
 |transition.ease()	   |ease specifies the easing function, example: linear, elastic, bounce |
 |transition.delay()	   |delay specifies the delay in animation in milliseconds for each element |
 
-Example:
+*Example:*
 ```html
 <!doctype html>
 <html>
@@ -503,33 +547,43 @@ Example:
 </html>
 ```
 [Live Example](https://learning-zone.github.io/d3js-interview-questions/s.transitions.html)
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. ***What is the command to interpolate two objects in d3.js?***
+## Q. ***What is the command to interpolate two objects in d3.js?***
+
 To interpolate two objects in d3.js command `d3.interpolateObject(a,b)` is used. Object interpolation is useful particularly for data space interpolation, where data is interpolated rather than attribute values.
 
-#### Q. ***What is the command “d3.ascending (a, b)” is used?***
+## Q. ***What is the command “d3.ascending (a, b)” is used?***
+
 This command is comparator function that is used for a natural order, and can be used along with the built-in-array sort method to arrange elements in ascending order.
 
-#### Q. ***How XML file is called in d3.js?***
-By using the command `d3.xml(url[mimeType][,callback])` XML file can be called. This command will create a request for the XML file at the specified url. If a call back is declared, the request will be immediately processed with the GET method and the call back will be invoked when the file is loaded, or request fails.
+## Q. ***How XML file is called in d3.js?***
 
-#### Q. ***What happens if no call back is specified for XML file in d3.js?***
+By using the command `d3.xml(url[mimeType][,callback])` XML file can be called. This command will create a request for 
+the XML file at the specified url. If a call back is declared, the request will be immediately processed with the GET method and the call back will be invoked when the file is loaded, or request fails.
+
+## Q. ***What happens if no call back is specified for XML file in d3.js?***
+
 If no call back is specified, the returned request can be issued using xhr.get and handled using xhr.on.
 
-#### Q. ***Mention the command to join the specified array of data in d3.js?***
+## Q. ***Mention the command to join the specified array of data in d3.js?***
+
 To join the specified array of data in d3.js you can use the command `selection.data([values[,key]])`.  The values here specifies the data for each group in the selection while a key function determines how data is connected to elements.
 
-#### Q. ***What does the command d3.csv.parseRows(string[,accessor]) ?***
+## Q. ***What does the command d3.csv.parseRows(string[,accessor]) ?***
+
 This command parses the specified string, which is the content of a CSV file, returning an array of arrays representing the parsed rows.
 
-#### Q. ***What is the use of “Enter” and “Exit” selection in d3.js?***
+## Q. ***What is the use of “Enter” and “Exit” selection in d3.js?***
+
 By using `enter()` and `exit()` selection in d3.js, you can create new nodes for incoming data and eliminate outgoing nodes that are no longer required.
 
-#### Q. ***What is the best way to create the stacked barchart using d3.js?***
-```javascript
+## Q. ***What is the best way to create the stacked barchart using d3.js?***
+
+```js
 var data = [
   {"ORDER": 1, "apples": 3840, "bananas": 1920, "cherries": 960},
   {"ORDER": 2, "apples": 1600, "bananas": 1440, "cherries": 960},
@@ -570,20 +624,27 @@ g.append("g")
         .attr("width", x.bandwidth());
 
 ```
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. ***What is difference between d3.scale.linear() and d3.scaleLinear()?***
+## Q. ***What is difference between d3.scale.linear() and d3.scaleLinear()?***
+
 **version 3: d3.scale.linear()**  
 Constructs a new linear scale with the default domain [0,1] and the default range [0,1]. Thus, the default linear scale is equivalent to the identity function for numbers; for example linear(0.5) returns 0.5.
 
 **version 4: d3.scaleLinear()**  
 Constructs a new continuous scale with the unit domain [0, 1], the unit range [0, 1], the default interpolator and clamping disabled. Linear scales are a good default choice for continuous quantitative data because they preserve proportional differences. Each range value y can be expressed as a function of the domain value x: y = mx + b.
 
-#### Q. ***How to set initial zoom level in d3.js?***
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***How to set initial zoom level in d3.js?***
+
 **D3v4**  
-```javascript
+```js
 var zoom = d3.zoom().on("zoom", zooming);
 
 vis = svg.append("svg:svg")
@@ -594,7 +655,13 @@ vis = svg.append("svg:svg")
      .append("svg:g")
      .attr("transform","translate(100,50) scale(.5,.5)");
 ```
-#### Q. ***How to resize an SVG when the window is resized in d3.js?***
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***How to resize an SVG when the window is resized in d3.js?***
+
 ```css
 .svg-container {
   display: inline-block;
@@ -621,7 +688,7 @@ svg .rect {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
 <div id="chartId"></div>
 ```
-```javascript
+```js
 d3.select("div#chartId")
    .append("div")
    // Container class to make it responsive.
@@ -638,12 +705,14 @@ d3.select("div#chartId")
    .attr("width", 600)
    .attr("height", 400);
 ```
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. ***How to get mouse position in d3.js?***
-```javascript
+## Q. ***How to get mouse position in d3.js?***
+
+```js
 var svg = d3.select('body').append('svg')
     .attr('width', width)
     .attr('height', height)
@@ -651,15 +720,27 @@ var svg = d3.select('body').append('svg')
       console.log( d3.event.clientX, d3.event.clientY ) // log the mouse x,y position
     });
 ```
-#### Q. ***How to format the date in d3.js?***
-```javascript
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***How to format the date in d3.js?***
+
+```js
 > formatDate = d3.time.format("%b-%Y")
 > formatDate(parseDate('2020-01-01'))
 "Jan-2020"
 ```
-#### Q. ***How to calculate the area of the polygon in d3.js?***
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***How to calculate the area of the polygon in d3.js?***
+
 The `d3.polygonArea()` method returns the signed area of the specified polygon. If the vertices of the polygon are in counterclockwise order (assuming a coordinate system where the origin ⟨0,0⟩ is in the top-left corner), the returned area is positive; otherwise it is negative, or zero.
-```javascript
+```js
 var d = [
   [-1, 415.44],
   [146.93, 304.47],
@@ -671,11 +752,17 @@ var area = d3.polygonArea(d);
 
 console.log(area) // Output: 36157.2759
 ```
-#### Q. ***How to handle events in d3.js?***
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***How to handle events in d3.js?***
+
 The `on()` method adds an event listener to all selected DOM elements.
 
 Syntax
-```javascript
+```js
 d3.selection.on(type[, listener[, capture]]);
 ```
 The first parameter is an event type as string such as "click", "mouseover" etc. The second parameter is a callback function which will be executed when an event occurs and the third optional parameter capture flag may be specified.
@@ -690,7 +777,8 @@ The following table lists important event handling method and objects.
 |d3.mouse(container)  |Gets the x and y coordinates of the current mouse position in the specified DOM element.|
 |d3.touch()	          | Gets the touch coordinates to a container|
 
-Example: Event Handling
+*Example:* Event Handling
+
 ```html
 <!doctype html>
 <html>
@@ -715,7 +803,7 @@ Example: Event Handling
 
           // Get current event info
           console.log(d3.event);
-          
+
           // Get x & y co-ordinates
           console.log(d3.mouse(this));
       })
@@ -727,6 +815,7 @@ Example: Event Handling
 </body>
 </html>
 ```
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
