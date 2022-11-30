@@ -1,6 +1,6 @@
 # D3.js Chart Basics
 
-*Click <img src="https://github.com/learning-zone/d3js-interview-questions/blob/master/assets/star.png" width="18" height="18" align="absmiddle" title="Star" /> if you like the project. Pull Request are highly appreciated.*
+> *Click &#9733; if you like the project. Your contributions are heartily ♡ welcome.*
 
 <br/>
 
